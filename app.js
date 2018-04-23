@@ -80,6 +80,9 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
+
+const quotationRoutes = require("./routes/quotation-router");
+app.use("/quotations", quotationRoutes);
       
 
 module.exports = app;
