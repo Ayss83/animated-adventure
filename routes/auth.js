@@ -9,7 +9,7 @@ const bcryptSalt = 10;
 
 
 authRoutes.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.render("auth/login", { "message": req.flash("error"), navColor: "is-light"});
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
@@ -20,7 +20,7 @@ authRoutes.post("/login", passport.authenticate("local", {
 }));
 
 authRoutes.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.render("auth/signup", {navColor: "is-light"});
 });
 
 authRoutes.post("/signup", (req, res, next) => {

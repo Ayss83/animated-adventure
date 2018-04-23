@@ -15,7 +15,7 @@
        {{#if user}}
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="imageColorWhite" alt="zinvoicesLogo" width="112" height="28">
+              <img src="images/logo-white.png" alt="zinvoicesLogo" width="112" height="28">
             </a>
             <a class="navbar-item" href="/">Zinvoices</a>
           </div>
@@ -38,15 +38,15 @@
         {{else}}
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="imageColorturquoise" alt="zinvoicesLogo" width="112" height="28">
+              <img src="images/logo-white.png" alt="zinvoicesLogo" width="112" height="28">
             </a>
             <a class="navbar-item" href="login">Zinvoices</a>
           </div>
 
           <div class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item" href="#">Log in</a>
-              <a class="navbar-item" href="#">Sign in</a>
+              <a class="navbar-item" href="/auth/login">Log in</a>
+              <a class="navbar-item" href="/auth/signup">Sign up</a>
             </div>
           </div>
         {{/if}}
