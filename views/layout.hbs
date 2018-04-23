@@ -15,38 +15,35 @@
        {{#if user}}
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="imageColorWhite" alt="zinvoicesLogo" width="112" height="28">
+              <img src="imageColorWhite" alt="zinvoicesLogo" width="auto" height="28">
             </a>
             <a class="navbar-item" href="/">Zinvoices</a>
-          </div>
-         <div class="navbar-menu">
-          <div class="navbar-start">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true" href="#">Quotations</span>
-            <span aria-hidden="true" href="#">Invoices</span>
-            <span aria-hidden="true" href="#">Delivry forms</span>
-            <span aria-hidden="true" href="#">Customers</span>
-            <span aria-hidden="true" href="#">Products</span>
+              <span aria-hidden="true" href="/quotations/">Quotations</span>
+              <span aria-hidden="true" href="/invoices">Invoices</span>
+              <span aria-hidden="true" href="/deliveryforms">Delivery forms</span>
+              <span aria-hidden="true" href="/customers">Customers</span>
+              <span aria-hidden="true" href="/products">Products</span>
           </a>
           </div>
-
+         <div class="navbar-menu">
          <div class="navbar-end">
-           <a class="navbar-item" href="#">Log out</a>
+           <a class="navbar-item" href="/logout">Log out</a>
          </div>
        </div>
 
         {{else}}
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="imageColorturquoise" alt="zinvoicesLogo" width="112" height="28">
+              <img src="imageColorturquoise" alt="zinvoicesLogo" width="auto" height="28">
             </a>
-            <a class="navbar-item" href="login">Zinvoices</a>
+            <a class="navbar-item" href="/">Zinvoices</a>
           </div>
 
           <div class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item" href="#">Log in</a>
-              <a class="navbar-item" href="#">Sign in</a>
+              <a class="navbar-item" href="/login">Log in</a>
+              <a class="navbar-item" href="/signin">Sign in</a>
             </div>
           </div>
         {{/if}}
