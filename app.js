@@ -83,6 +83,9 @@ app.use('/auth', authRoutes);
 
 const quotationRoutes = require("./routes/quotation-router");
 app.use("/quotations", quotationRoutes);
+
+const invoiceRoutes = require("./routes/invoice-router");
+app.use("/invoices", invoiceRoutes);
       
 
 module.exports = app;

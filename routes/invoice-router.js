@@ -2,20 +2,20 @@ const express = require("express");
 const router = express.Router();
 
 router.use((req, res, next) => {
-  res.locals.navColor = "is-link";
+  res.locals.navColor = "is-info";
   next();
 });
 
 router.get("/", (req, res, next) => {
-  res.render("quotation/list");
+  res.render("invoice/list");
 });
 
 router.get("/new", (req, res, next) => {
-  res.render("quotation/new");
+  res.render("invoice/new");
 });
 
 router.get("/view", (req, res, next) => {
-  res.render("quotation/view");
+  res.render("invoice/view");
 })
 
 module.exports = router;
