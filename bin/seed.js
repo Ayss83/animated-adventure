@@ -11,7 +11,7 @@ mongoose
 
   const quotations = [
     {
-      quotationNumber: "20180215-001",
+      quotationNumber: "20180215-211",
       products: [{
         designation: "Baguette de pain",
         quantity: 5,
@@ -34,7 +34,7 @@ mongoose
       date: new Date(2018, 1, 15)
     },
     {
-      quotationNumber: "20171214-001",
+      quotationNumber: "20171214-211",
       products: [{
         designation: "Playstation 4",
         quantity: 2,
@@ -57,7 +57,7 @@ mongoose
       date: new Date(2017, 11, 14)
     },
     {
-      quotationNumber: "20180114-021",
+      quotationNumber: "20180114-241",
       products: [{
         designation: "Intel i7 7800k processor",
         quantity: 1,
