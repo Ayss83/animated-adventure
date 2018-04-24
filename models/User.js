@@ -5,7 +5,8 @@ const userSchema = new Schema({
   username: {type: String, required: true, unique: true},
   encryptedPassword: {type: String, required: true},
   name: {type: String},
-  email: {type: String, required: true, unique: true}
+  email: {type: String, required: true, unique: true},
+  validated: {type: Boolean, default: false}
 }, {
   timestamps: {
     createdAt: 'created_at',

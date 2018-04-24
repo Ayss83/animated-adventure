@@ -3,7 +3,11 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('dashboard', {navColor: "is-primary"});
+  if(req.user) {
+    res.render('dashboard', {navColor: "is-primary"});
+  } else {
+    res.redirect("/auth/login");
+  }
 });
 
 
