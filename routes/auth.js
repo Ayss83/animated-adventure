@@ -5,59 +5,64 @@ const User = require("../models/User");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
 
-
-authRoutes.get("/login", (req, res, next) => {
+authRoutes.get("/auth/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error"), navColor: "is-light"});
 });
 
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
-
-authRoutes.get("/signup", (req, res, next) => {
-  res.render("auth/signup", {navColor: "is-light"});
-});
-
-authRoutes.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const rol = req.body.role;
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
-    return;
-  }
-
-  User.findOne({ username }, "username", (err, user) => {
-    if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+authRoutes.post("/auth/login", (req, res, next) => {
+  const {username, password} = req.body;
+  
+  User.findOne({username})
+  .then(user => {
+    if(!user) {
+      res.redirect("/auth/login");
       return;
     }
 
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
+    const {encryptedPassword} = user;
 
-    const newUser = new User({
-      username,
-      password: hashPass,
-      role:"teacher"
+    // if typed password doesn't match the encrypted password in db
+    if(!bcrypt.compareSync(password, encryptedPassword)) {
+      res.redirect("/auth/login");
+      return;
+    }
+    
+    // req.login() : passport's method for logging a user in
+    req.login(user, () => {
+      res.redirect("/");
     });
-
-    newUser.save((err) => {
-      if (err) {
-        res.render("auth/signup", { message: "Something went wrong" });
-      } else {
-        res.redirect("/");
-      }
-    });
+  })
+  .catch(err => {
+    next(err);
   });
 });
 
-authRoutes.get("/logout", (req, res) => {
+authRoutes.get("/auth/signup", (req, res, next) => {
+  res.render("auth/signup", {navColor: "is-light"});
+});
+
+authRoutes.post("/auth/signup", (req, res, next) => {
+  const {name, username, email, password} = req.body;
+  const salt = bcrypt.genSaltSync(10);
+  encryptedPassword = bcrypt.hashSync(password, salt);
+
+  if(password === "" || username === "") {
+    res.redirect("/signup");
+    return;
+  }
+
+  User.create({name, username, email, encryptedPassword})
+  .then(() => {
+
+    res.redirect("/");
+  })
+  .catch(err => {
+    next(err);
+  });
+});
+
+authRoutes.get("/auth/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
