@@ -1,25 +1,55 @@
+<div class="column">
+  <div class="column">
+    <div class="column is-4"> 
+    </div>
 
-<h2>Login</h2>
+    <div class="column is-half is-offset-one-quarter is-centered">
+         <h1 class="title is-1 is-centered">Login directly !</h1>
+    </div>
 
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+ <div class="column">
+    <div class="column is-4"> 
+    </div>
 
-  <br><br>
+    <div class="column is-half is-offset-one-quarter"> 
+      <div class="box">
+       <form action="/auth/login" method="POST" id="form-container">
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
 
-  <br><br>
+        <div class="field">
+          <p class="control has-icons-right">
+            <input class="input is-success" type="text" name="username" placeholder="Your  username">
+               <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+             </span>
+          </p>
+        </div>
 
-  <button>Login</button>
+        <div class="field">
+          <p class="control has-icons-right">
+            <input class="input is-warning" type="password" name="password" placeholder="Your password">
+               <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+             </span>
+            </p>
+        </div>
 
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/login">Signup</a>
-  </p>
-</form>
+          {{#if message }}
+              <div class="error-message">{{ message }}</div>
+          {{/if}}
+
+          <div class="buttons is-left is-right ">
+            <button class="button is-success is-left">Login !</button>
+            <button href="/auth/signup" class="button is-primary is-right">Or create your account today !</button>
+          </div>        
+        </form>
+          
+      </div>
+    </div>
+
+    <div class="column is-4"> 
+    </div>
+
+</div>
+
+
