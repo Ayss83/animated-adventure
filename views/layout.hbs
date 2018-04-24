@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>    
-    <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <title> Zinvoices </title>
-  </head>
-  <body>
-    <header>
-     <nav class="navbar {{navColor}} is-fixed-top" role="navigation" aria-label="main navigation">
-       {{#if user}}
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
-            </a>
-            <a class="navbar-item" href="/">Zinvoices</a>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-              <span aria-hidden="true" href="/quotations">Quotations</span>
-              <span aria-hidden="true" href="/invoices">Invoices</span>
-              <span aria-hidden="true" href="/delivery-forms">Delivery forms</span>
-              <span aria-hidden="true" href="/customers">Customers</span>
-              <span aria-hidden="true" href="/products">Products</span>
-          </a>
-          </div>
-         <div class="navbar-menu">
-         <div class="navbar-end">
-           <a class="navbar-item" href="/logout">Log out</a>
-         </div>
-       </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 
-        {{else}}
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
-            </a>
-            <a class="navbar-item" href="/">Zinvoices</a>
-          </div>
+  <title> Zinvoices </title>
+</head>
 
-          <div class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item" href="/auth/login">Log in</a>
-              <a class="navbar-item" href="/auth/signup">Sign up</a>
-            </div>
-          </div>
-        {{/if}}
-      </nav>
-    </header>
+<body>
+  <header>
+    <nav class="navbar {{navColor}} is-fixed-top" role="navigation" aria-label="main navigation">
+      {{#if user}}
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="/images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
+        </a>
+        <a class="navbar-item" href="/">Zinvoices</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true" href="/quotations">Quotations</span>
+          <span aria-hidden="true" href="/invoices">Invoices</span>
+          <span aria-hidden="true" href="/delivery-forms">Delivery forms</span>
+          <span aria-hidden="true" href="/customers">Customers</span>
+          <span aria-hidden="true" href="/products">Products</span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/auth/logout">Log out</a>
+        </div>
+      </div>
 
-    {{{body}}}
+      {{else}}
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="/images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
+        </a>
+        <a class="navbar-item" href="/">Zinvoices</a>
+      </div>
 
-  </body>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/auth/login">Log in</a>
+          <a class="navbar-item" href="/auth/signup">Sign up</a>
+        </div>
+      </div>
+      {{/if}}
+    </nav>
+  </header>
+
+  {{{body}}}
+
+</body>
+
 </html>

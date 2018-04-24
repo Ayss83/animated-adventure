@@ -62,8 +62,9 @@ authRoutes.post("/auth/signup", (req, res, next) => {
   });
 });
 
-authRoutes.get("/auth/logout", (req, res) => {
+authRoutes.get("/auth/logout", (req, res, next) => {
   req.logout();
+  res.locals.user = null;
   res.redirect("/");
 });
 
