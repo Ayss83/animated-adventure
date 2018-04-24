@@ -16,9 +16,9 @@ const quotationSchema = new Schema({
     address2: {type: String},
     zipCode: {type: String, required: true},
     city: {type: String, required: true}
-  }
-}, {
-  timestamps: true
+  },
+  accepted: {type: Boolean, default: false},
+  date: {type: Date, required: true}
 });
 
 const Quotation = mongoose.model("Quotation", quotationSchema);

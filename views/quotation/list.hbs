@@ -41,11 +41,11 @@
        <tbody>
          {{#each quotationsList}}
          <tr>
-            <td>date de la facture</td>
-            <td>Name of consumer</td>
-            <td>amount</td>
-            <td>date</td>
-            <td>yes/no</td>
+            <td>{{this.quotationNumber}}</td>
+            <td>{{this.customer.firstName}} {{this.customer.lastName}}</td>
+            <td>{{this.amount}}</td>
+            <td>{{this.date}}</td>
+            <td>{{#if this.accepted}} Yes {{else}} No {{/if}}</td>
           </tr>
         </tbody>
         {{/each}}
