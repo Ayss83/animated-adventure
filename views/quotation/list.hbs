@@ -1,88 +1,88 @@
-<div class="column is-multiline">
-  <div class="column">
-    <div class="column is-2"> 
+<div class="columns">
+   <div class="column is-2"> 
+    </div>
+</div>
+
+<div class="columns">
+
+    <div class="column">       
+     <h1 class="title is-3 is-centered">Quotations List</h1>
     </div>
 
-    <div class="column is-2"> 
-    </div>
-
-    <div class="column is-half">
-      <h1 class="title is-1 is-centered">Quotations List</h1>
-    </div>
-
-    <div class="column is-2"> 
-      <a class="button is-primary is-link is-centered" href="/">
-        <h2>Dashboard</h2>
-      </a> 
-    </div>
-
-    <div class="column is-2"> 
+    <div class="column is-narrow">
+      <div style="width: 80px;">
+        <a class="button is-primary is-right is-small" href="/">
+          Dashboard</a>  
     </div>
   </div>
 
+</div>
+
   <div class="columns is-desktop">
 
-    <div class="column is-2"> 
-    </div>
-
     <div class="column">
-      <table class="table">
+      <div class="box">
+        <table class="table">
 
-        <thead>
+          <thead>
+            <tr>
+              <th><abbr title="Position">Quotation number</abbr></th>
+              <th><abbr title="Position">Customer</abbr></th>
+              <th><abbr title="Position">Amount</abbr></th>
+              <th><abbr title="Position">Establishment date</abbr></th>
+              <th><abbr title="Position">Accepted</abbr></th>
+            </tr>
+        </thead>
+
+        <tbody>
+          {{#each quotationsList}}
           <tr>
-            <th><abbr title="Position">Quotation number</abbr></th>
-            <th><abbr title="Position">Customer</abbr></th>
-            <th><abbr title="Position">Amount</abbr></th>
-            <th><abbr title="Position">Establishment date</abbr></th>
-            <th><abbr title="Position">Accepted</abbr></th>
-          </tr>
-       </thead>
-
-       <tbody>
-         {{#each quotationsList}}
-         <tr>
-            <td>date de la facture</td>
-            <td>Name of consumer</td>
-            <td>amount</td>
-            <td>date</td>
-            <td>yes/no</td>
-          </tr>
-        </tbody>
-        {{/each}}
-     </table>
+              <td>date de la facture</td>
+              <td>Name of consumer</td>
+              <td>amount</td>
+              <td>date</td>
+              <td>yes/no</td>
+            </tr>
+          </tbody>
+          {{/each}}
+      </table>
+      </div>
     </div> 
 
-    <div class="column is-2"> 
-    </div>
-
   </div> 
-
-  <div class="columns">
-    <div class="column is-2"> 
-    </div>
-
+<div class="columns">
     <div class="column is-2"> 
       <a class="button is-link is-focused is-centered" href="/quotations/new">
         <h2>New Quotation</h2>
       </a>  
     </div>
-
-   <div class="column is-2"> 
-    </div>
-
-    <div class="column is-2"> 
-    </div>
-
-    <div class="column is-2"> 
-      <div class="buttons is-focused has-addons is-link is-centered">
-        <span class="button" href="#">prev.</span>
-        <span class="button" href="#">Next.</span>
-    </div>
-    </div>
-
-    <div class="column is-2">  
-    </div>
-
   </div>
 </div>
 
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <a class="pagination-previous">Previous</a>
+  <a class="pagination-next">Next page</a>
+  <ul class="pagination-list">
+    <li>
+      <a class="pagination-link" aria-label="Goto page 1">1</a>
+    </li>
+    <li>
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    <li>
+      <a class="pagination-link" aria-label="Goto page 45">45</a>
+    </li>
+    <li>
+      <a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a>
+    </li>
+    <li>
+      <a class="pagination-link" aria-label="Goto page 47">47</a>
+    </li>
+    <li>
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    <li>
+      <a class="pagination-link" aria-label="Goto page 86">86</a>
+    </li>
+  </ul>
+</nav>
