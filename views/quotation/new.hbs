@@ -21,7 +21,12 @@
   <form action="/quotations/new" method="post">
     <label>
       Quotation number :
-      <input type="text" name="quotationNumber" disabled value="{{number}}">
+      <input type="text" name="quotationNumber" readonly value="{{number}}">
+    </label>
+    <br>
+    <label>
+      Date : 
+      <input type="date" name="date">
     </label>
 
     <div class="column">
@@ -64,98 +69,95 @@
     </label>
     <br>
     <label>
-      Address :
+      Email :
       <input type="text" name="email">
     </label>
     <br>
+
+
+  <div class="column"></div>
+
+  <h2>Products</h2>
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>
+            <abbr title="Position">Designation</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Quantity</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Unit Price</abbr>
+          </th>
+          <th>
+            <abbr title="Position">TVA</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Total Price</abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+        </tr>
+      </thead>
+
+      <tfoot>
+        <tr>
+          <th>
+             <button id="addProductBtn" type="button" class="button is-danger is-link is-centered">Add a product</button>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+          <th>
+            <abbr title="Position">Price Total</th>
+          <th>
+            <abbr title="Position">Calcul of total</abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+        </tr>
+      </tfoot>
+
+      <tbody class="productsContainer">
+          <tr>
+            <td>
+              <input type="text" name="designation">
+            </td>
+            <td>
+              <input type="text" name="quantity">
+            </td>
+            <td>
+              <input type="text" name="unitPrice">
+            </td>
+            <td>
+              <input type="text" name="vatRate">
+            </td>
+            <td>
+              <input type="text">
+            </td>
+            <td>
+              <button type="button" class="button is-focused is-link is-centered">
+                Delete
+              </button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
   </form>
 
 </div>
 
-<div class="column">
+<script src="/javascripts/quotations/quotationNew.js"></script>
 
-
-
-</div>
-
-<h2>Products</h2>
-
-<table class="table">
-
-  <thead>
-    <tr>
-      <th>
-        <abbr title="Position">Designation</abbr>
-      </th>
-      <th>
-        <abbr title="Position">Quantity</abbr>
-      </th>
-      <th>
-        <abbr title="Position">Unit Price</abbr>
-      </th>
-      <th>
-        <abbr title="Position">TVA</abbr>
-      </th>
-      <th>
-        <abbr title="Position">Total Price</abbr>
-      </th>
-      <th>
-        <abbr title="Position"></abbr>
-      </th>
-    </tr>
-  </thead>
-
-  <tfoot>
-    <tr>
-      <th>
-        <abbr title="Position"></abbr>
-      </th>
-      <th>
-        <abbr title="Position"></abbr>
-      </th>
-      <th>
-        <abbr title="Position"></abbr>
-      </th>
-      <th>
-        <abbr title="Position">Price Total></th>
-      <th>
-        <abbr title="Position">Calcul of total</abbr>
-      </th>
-      <th>
-        <abbr title="Position"></abbr>
-      </th>
-    </tr>
-  </tfoot>
-
-  <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <a class="button is-focused is-link is-centered">
-          Delete
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
+{{!-- <a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
   <h2>Customers'List</h2>
-</a>
-<br />
-<a class="button is-danger is-link is-centered">
-  <h2>Add a product</h2>
-</a>
-<br />
-
-<a class="button is-focused is-link is-centered" href="/quotations/view">
-  <h2>Save and view pdf</h2>
-</a>
-<br />
+</a> --}}

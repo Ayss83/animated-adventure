@@ -124,4 +124,24 @@ router.get("/:page?", (req, res, next) => {
   }
 });
 
+router.post("/new", (req, res, next) => {
+  console.log(req.body);
+  const quotationToSave = {
+    customer : {},
+    products : []
+  };
+
+  const inputNames = Object.keys(req.body);
+  const quotationFields = inputNames.slice(0, 2);
+  const customerFields = inputNames.slice(2, 10);
+  const productFields = inputNames.slice(10);
+
+  console.log(quotationFields, customerFields, productFields);
+
+  inputNames.forEach(input => {
+    // console.log(input + " : " + req.body[input]);
+  });
+});
+
+
 module.exports = router;
