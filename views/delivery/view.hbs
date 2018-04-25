@@ -3,7 +3,7 @@
 </div>
 
 <div class="column has-text-centered">       
-  <h3 class="title is-3 is-centered">Quotation #{{quotation.quotationNumber}}</h3>
+  <h3 class="title is-3 is-centered">Delivery #{{quotation.quotationNumber}}</h3>
 </div>
 
 <div class="column is-2"> 
@@ -33,8 +33,20 @@
               </li>
             </ul>
         </div>
-        <div class="column is-hidden-mobile"><a class="button is-warning is-link is-centered is-small">Update</a></div>
-        <div class="column is-hidden-touch"></div>
+        <div class="column is-hidden-mobile"><a class="button is-success is-link is-centered is-small">Duplicate</a></div>
+        <div class="column">
+            <ul>
+              <li>{{quotation.customer.firstName}} {{quotation.customer.lastName}}
+              </li>
+              <li>{{quotation.customer.address1}}
+              </li>
+                {{#if quotation.customer.address2}}
+                <li>{{quotation.customer.address2}}  </li>
+                {{/if}} 
+              <li>{{quotation.customer.zipCode}} {{quotation.customer.city}}
+              </li>
+            </ul>
+        </div>
         <div class="column is-hidden-touch"></div>
      </div>
 
@@ -47,32 +59,20 @@
               <tr>
                 <th><abbr title="Position">Designation</abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quantity</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">TVA</p></abbr></th>
-                <th><abbr title="Position"><p class="has-text-right">Total Price</p></abbr></th>
-                <th  class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </thead>
             <tbody>
-              {{#each quotation.products}}
+              {{#each delivry-form.products}}
                 <tr>
                   <td>{{this.designation}}</td>
                   <td class="is-hidden-mobile"><p class="has-text-centered">{{this.quantity}}</p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered">{{this.unitPriceWT}} €</p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered">{{this.vatRate}} %</p></td>
-                  <td><p class="has-text-right">{{this.amount}} €</p></td>
-                  <td class="is-hidden-mobile"></td>
                 </tr>
               {{/each}}
             </tbody>
             <tfoot>
               <tr>
-                <th><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Price Total</p></th>
-                <th><abbr title="Position"><p class="has-text-right">{{quotation.total}} €</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Total</p></th>
+                <th><abbr title="Position"><p class="has-text-right">{{quantity.total}} €</p></abbr></th>
               </tr>
             </tfoot>
           </table>
@@ -93,7 +93,7 @@
   </div>
   <div class="column is-hidden-mobile"></div>
   <div class="column has-text-right"> 
-          <span  class="button {{navColor}} is-centered is-outlined " href="/quotations/view">
+          <span  class="button {{navColor}} is-centered is-outlined " href="/delibry-forms/view">
             Edit pdf
           </span>     
   </div>

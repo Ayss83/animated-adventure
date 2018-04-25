@@ -3,7 +3,7 @@
 </div>
 
 <div class="column has-text-centered">       
-  <h3 class="title is-3 is-centered">Quotations List</h3>
+  <h3 class="title is-3 is-centered">Invoices' List</h3>
 </div>
 
 <div class="column is-2"> 
@@ -32,17 +32,13 @@
               <div class="column ">
                 Establishment date
               </div>
-        
-              <div class="column ">
-                Accepted
-              </div>
           </div>
 
 {{!-- for each   --}}
-      {{#each quotationsList}}
+      {{#each invoicesList}}
         <div class="columns has-text-centered is-gapless tr" height="20">
             <div class="column">
-              {{this.quotationNumber}}
+              {{this.invoiceNumber}}
             </div>
           
             <div class="column">
@@ -55,10 +51,6 @@
   
             <div class="column is-hidden-mobile">
               {{this.convertedDate}}
-            </div>
-       
-            <div class="column is-hidden-mobile">
-              {{#if this.accepted}} Yes {{else}} No {{/if}}
             </div>
         </div>
           {{/each}}  
@@ -75,8 +67,8 @@
     <div class="column is-1 is-hidden-mobile"> 
     </div>
     <div class="column"> 
-      <a class="button is-link is-centered" href="/quotations/new">
-        <h2>New Quotation</h2>
+      <a class="button is-link is-centered" href="/invoices/new">
+        <h2>New invoice</h2>
       </a>  
     </div>
   </div>
@@ -94,7 +86,7 @@
       <ul class="pagination-list">
         {{#each pages}}
           <li>
-            <a class="pagination-link" href="/quotations/{{this}}">{{this}}</a>
+            <a class="pagination-link" href="/invoices/{{this}}">{{this}}</a>
           </li>
         {{/each}}
       </ul>
@@ -104,4 +96,4 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-<script src="/javascripts/quotations/quotationList.js"></script>
+<script src="/javascripts/invoices/invoiceList.js"></script>
