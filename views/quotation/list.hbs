@@ -18,7 +18,7 @@
   <div class="columns is-desktop">
       <div class="box" style="height: 650px">
         <table class="table">
-          <div class="columns has-text-centered has-text-weight-bold is-line-height">
+          <div class="columns has-text-centered has-text-weight-bold is-line-height " height="30">
               <div class="column">
                 Quotation number
               </div>
@@ -27,15 +27,15 @@
                 Customer       
               </div>
           
-              <div class="column">
+              <div class="column is-hidden-touch">
                 Amount 
               </div>
     
-              <div class="column">
+              <div class="column is-hidden-touch">
                 Establishment date
               </div>
         
-              <div class="column">
+              <div class="column is-hidden-touch">
                 Accepted
               </div>
           </div>
@@ -43,7 +43,9 @@
 
       {{#each quotationsList}}
       <div class="tr">
-        <div class="columns has-text-centered">
+        <div class="column" height="10">
+            </div>
+        <div class="columns is-gapless" height="20">
             <div class="column">
               {{this.quotationNumber}}
             </div>
@@ -52,15 +54,15 @@
               {{this.customer.firstName}} {{this.customer.lastName}}     
             </div>
         
-            <div class="column">
+            <div class="column is-hidden-touch">
               {{this.amount}}
             </div>
   
-            <div class="column">
+            <div class="column is-hidden-touch">
               {{this.convertedDate}}
             </div>
        
-            <div class="column">
+            <div class="column is-hidden-touch">
               {{#if this.accepted}} Yes {{else}} No {{/if}}
             </div>
         </div>
