@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Quotation = require("../models/Quotation");
+const Customer = require("../models/Customer");
 
 router.use((req, res, next) => {
   res.locals.navColor = "is-link";
@@ -125,7 +126,6 @@ router.get("/:page?", (req, res, next) => {
 });
 
 router.post("/new", (req, res, next) => {
-  console.log(req.body);
   const quotationToSave = {
     customer : {},
     products : []
@@ -135,11 +135,41 @@ router.post("/new", (req, res, next) => {
   const quotationFields = inputNames.slice(0, 2);
   const customerFields = inputNames.slice(2, 10);
   const productFields = inputNames.slice(10);
+  const productsNumber = productFields.length / 4;
 
-  console.log(quotationFields, customerFields, productFields);
+  quotationFields.forEach(field => {
+    quotationToSave[field] = req.body[field]
+  });
 
-  inputNames.forEach(input => {
-    // console.log(input + " : " + req.body[input]);
+  customerFields.forEach(field => {
+    quotationToSave.customer[field] = req.body[field];
+  });
+
+  for(let i = 0; i < productsNumber; i++) {
+    const currentProduct = {};
+    for(let j = 0; j < 4; j++) {
+      const currentProductFields = ["designation", "quantity", "unitPriceWT", "vatRate"]
+      const fieldToRetrieve = productFields.shift();
+      currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve]
+    }
+    quotationToSave.products.push(currentProduct);
+  }
+
+  const currentCustomer = quotationToSave.customer;
+  Customer.find({lastName: currentCustomer.lastName, firstName: currentCustomer.firstName})
+  .then(customer => {
+    if(customer.length === 0) {
+      return Customer.create(currentCustomer)
+    }
+  })
+  .then(() => {
+    return Quotation.create(quotationToSave)
+  })
+  .then(() => {
+    res.redirect("/quotations/1");
+  })
+  .catch(err => {
+    next(err);
   });
 });
 
