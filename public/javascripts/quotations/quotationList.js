@@ -16,12 +16,12 @@ document.querySelector(".pagination-next").onclick = function() {
 }
 
 function displayQuotation() {
-  quotationNum = event.target.parentNode.firstElementChild.innerHTML;
+  quotationNum = event.target.parentNode.firstElementChild.innerHTML.trim();
   window.location.assign(`/quotations/view/${quotationNum}`);
 }
 
 window.onload = function() {
-  document.querySelectorAll("tbody tr").forEach(tr => {
+  document.querySelectorAll(".tr").forEach(tr => {
     tr.onclick = displayQuotation;
   });
 }

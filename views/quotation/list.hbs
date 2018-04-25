@@ -16,7 +16,7 @@
 {{!-- colonnes   --}}
 
   <div class="columns is-desktop">
-      <div class="box">
+      <div class="box" style="height: 650px">
         <table class="table">
           <div class="columns has-text-centered has-text-weight-bold is-line-height">
               <div class="column">
@@ -42,7 +42,7 @@
        </table>
 
       {{#each quotationsList}}
-
+      <div class="tr">
         <div class="columns has-text-centered">
             <div class="column">
               {{this.quotationNumber}}
@@ -57,13 +57,14 @@
             </div>
   
             <div class="column">
-              E{{this.date}}
+              {{this.convertedDate}}
             </div>
        
             <div class="column">
               {{#if this.accepted}} Yes {{else}} No {{/if}}
             </div>
         </div>
+      </div>
           {{/each}}  
     </div>  
   </div> 
@@ -72,38 +73,6 @@
    <div class="column is-2"> 
     </div>
 </div>
-
-{{!-- tableau  --}}
-
-    <div class="column is-desktop">
-      <div class="box" style="min-height: 400px">
-        <table class="table">
-
-          <thead>
-            <tr>
-              <th><abbr title="Position">Quotation number</abbr></th>
-              <th><abbr title="Position">Customer</abbr></th>
-              <th><abbr title="Position">Amount</abbr></th>
-              <th><abbr title="Position">Establishment date</abbr></th>
-              <th><abbr title="Position">Accepted</abbr></th>
-            </tr>
-        </thead>
-
-       <tbody>
-         {{#each quotationsList}}
-         <tr>
-            <td>{{this.quotationNumber}}</td>
-            <td>{{this.customer.firstName}} {{this.customer.lastName}}</td>
-            <td>{{this.amount}}</td>
-            <td>{{this.convertedDate}}</td>
-            <td>{{#if this.accepted}} Yes {{else}} No {{/if}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-     </table>
-    </div> 
-
-  </div> 
 
 {{!-- bouton   --}}
 <div class="columns">

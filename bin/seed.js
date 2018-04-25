@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const Quotation = require("../models/Quotation");
+const User = require("../models/User");
+
 
 mongoose
-  .connect('mongodb://localhost/iron-project', {useMongoClient: true})
+  .connect(process.env.DBADDRESS, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -91,4 +94,12 @@ mongoose
       console.log("Error", err);
       mongoose.connection.close();
     });
+  });
+
+  const salt = bcrypt.genSaltSync(10);
+  const password = bcrypt.hashSync("123456", salt);
+
+  User.create({username: "renaud", encryptedPassword: password, name: "Renaud", email: "renoruns@gmail.com", validated: true})
+  .then(user => {
+    console.log(`User created`);
   });
