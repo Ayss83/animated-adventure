@@ -28,48 +28,65 @@
     <h2>Customer</h2>
   </div>
 
-  <table class="table">
-    <tbody>
-         <tr>
-            <td>First name</td>
-            <td class="table is-bordered"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-          <td>Last name</td>
-          <td class="table is-bordered"></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Adresse 1</td>
-          <td class="table is-bordered"></td>
-          <td>Adresse 2</td>
-          <td class="table is-bordered"></td>
-        </tr>
-        <tr>
-          <td>Zip Code</td>
-          <td class="table is-bordered"></td>
-          <td>Contry</td>
-          <td class="table is-bordered"></td>
-        </tr>
-        <tr>
-          <td>City</td>
-          <td class="table is-bordered"></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-  </table>
+<div class="column">
+  <form action="/quotations/new" method="post">
+    <label>
+      Quotation number :
+      <input type="text" name="quotationNumber" readonly value="{{number}}">
+    </label>
+    <br>
+    <label>
+      Date : 
+      <input type="date" name="date">
+    </label>
 
-</div>
+    <div class="column">
+      <h2>Customer</h2>
+    </div>
 
-  <div class="column">
+    <label>
+      First Name :
+      <input type="text" name="firstName">
+    </label>
+    <br>
+    <label>
+      Last Name :
+      <input type="text" name="lastName">
+    </label>
+    <br>
+    <label>
+      Address :
+      <input type="text" name="address1">
+    </label>
+    <br>
+    <label>
+      Address complement :
+      <input type="text" name="address2">
+    </label>
+    <br>
+    <label>
+      ZIP Code :
+      <input type="text" name="zipCode">
+    </label>
+    <br>
+    <label>
+      City :
+      <input type="text" name="city">
+    </label>
+    <br>
+    <label>
+      Phone :
+      <input type="text" name="phone">
+    </label>
+    <br>
+    <label>
+      Email :
+      <input type="text" name="email">
+    </label>
+    <br>
 
 
-
-  </div>
+  <div class="column"></div>
 
   <h2>Products</h2>
 
@@ -77,55 +94,81 @@
 
       <thead>
         <tr>
-          <th><abbr title="Position">Designation</abbr></th>
-          <th><abbr title="Position">Quantity</abbr></th>
-          <th><abbr title="Position">Unit Price</abbr></th>
-          <th><abbr title="Position">TVA</abbr></th>
-          <th><abbr title="Position">Total Price</abbr></th>
-          <th><abbr title="Position"></abbr></th>
+          <th>
+            <abbr title="Position">Designation</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Quantity</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Unit Price</abbr>
+          </th>
+          <th>
+            <abbr title="Position">TVA</abbr>
+          </th>
+          <th>
+            <abbr title="Position">Total Price</abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
         </tr>
       </thead>
 
-    <tfoot>
+      <tfoot>
         <tr>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position">Price Total></th>
-          <th><abbr title="Position">Calcul of total</abbr></th>
-          <th><abbr title="Position"></abbr></th>
+          <th>
+             <button id="addProductBtn" type="button" class="button is-danger is-link is-centered">Add a product</button>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
+          <th>
+            <abbr title="Position">Price Total</th>
+          <th>
+            <abbr title="Position">Calcul of total</abbr>
+          </th>
+          <th>
+            <abbr title="Position"></abbr>
+          </th>
         </tr>
       </tfoot>
 
-      <tbody>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+      <tbody class="productsContainer">
+          <tr>
             <td>
-              <a class="button is-focused is-link is-centered">
-                Delete               
-              </a>
+              <input type="text" name="designation">
             </td>
-        </tr>
+            <td>
+              <input type="text" name="quantity">
+            </td>
+            <td>
+              <input type="text" name="unitPrice">
+            </td>
+            <td>
+              <input type="text" name="vatRate">
+            </td>
+            <td>
+              <input type="text">
+            </td>
+            <td>
+              <button type="button" class="button is-focused is-link is-centered">
+                Delete
+              </button>
+            </td>
+          </tr>
       </tbody>
-     </table>
-  </div>
+    </table>
+    <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
+  </form>
 
-  
+</div>
 
-    <a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
-      <h2>Customers'List</h2>
-    </a> 
-    <br />
-    <a class="button is-danger is-link is-centered">
-     <h2>Add a product</h2>
-    </a> 
-    <br />
+<script src="/javascripts/quotations/quotationNew.js"></script>
 
-    <a class="button is-focused is-link is-centered" href="/quotations/view">
-      <h2>Save and view pdf</h2>
-    </a>    
-    <br />
+{{!-- <a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
+  <h2>Customers'List</h2>
+</a> --}}
