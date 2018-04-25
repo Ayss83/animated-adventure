@@ -43,30 +43,28 @@
        </table>
 
       {{#each quotationsList}}
-      <div class="tr">
-        <div class="columns has-text-centered">
-            <div class="column">
-              {{this.quotationNumber}}
-            </div>
-          
-            <div class="column">
-              {{this.customer.firstName}} {{this.customer.lastName}}     
-            </div>
-        
-            <div class="column">
-              {{this.amount}}
-            </div>
-  
-            <div class="column">
-              {{this.convertedDate}}
-            </div>
-       
-            <div class="column">
-              {{#if this.accepted}} Yes {{else}} No {{/if}}
-            </div>
+      <div class="columns has-text-centered tr">
+        <div class="column">
+          {{this.quotationNumber}}
+        </div>
+      
+        <div class="column">
+          {{this.customer.firstName}} {{this.customer.lastName}}     
+        </div>
+    
+        <div class="column">
+          {{this.amount}}
+        </div>
+
+        <div class="column">
+          {{this.convertedDate}}
+        </div>
+    
+        <div class="column">
+          {{#if this.accepted}} Yes {{else}} No {{/if}}
         </div>
       </div>
-          {{/each}}  
+      {{/each}}  
     </div>  
   </div> 
 </div> 

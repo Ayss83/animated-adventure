@@ -5,127 +5,157 @@
     <div class="column is-one-quarter"></div>
 
     <div class="column is-half">
-      <h1 class="title is-1 is-centered">Quotation N°{{DATE / NBRE}}</h1>
+      <h1 class="title is-1 is-centered">New quotation</h1>
     </div>
 
     <div class="column is-2">
       <a class="button is-focused is-link is-centered" href="/quotations">
-          <h2>Quotations'List</h2>
-        </a> 
-    </div>
-    
-    <div class="column is-2">
-      <a class="button is-primary is-link is-centered" href="/">
-          <h2>Dashboard</h2>
-      </a> 
+        <h2>Quotations'List</h2>
+      </a>
     </div>
 
   </div>
 </div>
-  
-<div class="column"> 
-  <div class="column"> 
-    <h2>Customer</h2>
-  </div>
 
-  <table class="table">
-    <tbody>
-         <tr>
-            <td>First name</td>
-            <td class="table is-bordered"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-          <td>Last name</td>
-          <td class="table is-bordered"></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Adresse 1</td>
-          <td class="table is-bordered"></td>
-          <td>Adresse 2</td>
-          <td class="table is-bordered"></td>
-        </tr>
-        <tr>
-          <td>Zip Code</td>
-          <td class="table is-bordered"></td>
-          <td>Contry</td>
-          <td class="table is-bordered"></td>
-        </tr>
-        <tr>
-          <td>City</td>
-          <td class="table is-bordered"></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-  </table>
+<div class="column">
+  <form action="/quotations/new" method="post">
+    <label>
+      Quotation number :
+      <input type="text" name="quotationNumber" disabled value="{{number}}">
+    </label>
+
+    <div class="column">
+      <h2>Customer</h2>
+    </div>
+
+    <label>
+      First Name :
+      <input type="text" name="firstName">
+    </label>
+    <br>
+    <label>
+      Last Name :
+      <input type="text" name="lastName">
+    </label>
+    <br>
+    <label>
+      Address :
+      <input type="text" name="address1">
+    </label>
+    <br>
+    <label>
+      Address complement :
+      <input type="text" name="address2">
+    </label>
+    <br>
+    <label>
+      ZIP Code :
+      <input type="text" name="zipCode">
+    </label>
+    <br>
+    <label>
+      City :
+      <input type="text" name="city">
+    </label>
+    <br>
+    <label>
+      Phone :
+      <input type="text" name="phone">
+    </label>
+    <br>
+    <label>
+      Address :
+      <input type="text" name="email">
+    </label>
+    <br>
+  </form>
 
 </div>
 
-  <div class="column">
+<div class="column">
 
 
 
-  </div>
+</div>
 
-  <h2>Products</h2>
+<h2>Products</h2>
 
-    <table class="table">
+<table class="table">
 
-      <thead>
-        <tr>
-          <th><abbr title="Position">Designation</abbr></th>
-          <th><abbr title="Position">Quantity</abbr></th>
-          <th><abbr title="Position">Unit Price</abbr></th>
-          <th><abbr title="Position">TVA</abbr></th>
-          <th><abbr title="Position">Total Price</abbr></th>
-          <th><abbr title="Position"></abbr></th>
-        </tr>
-      </thead>
+  <thead>
+    <tr>
+      <th>
+        <abbr title="Position">Designation</abbr>
+      </th>
+      <th>
+        <abbr title="Position">Quantity</abbr>
+      </th>
+      <th>
+        <abbr title="Position">Unit Price</abbr>
+      </th>
+      <th>
+        <abbr title="Position">TVA</abbr>
+      </th>
+      <th>
+        <abbr title="Position">Total Price</abbr>
+      </th>
+      <th>
+        <abbr title="Position"></abbr>
+      </th>
+    </tr>
+  </thead>
 
-    <tfoot>
-        <tr>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position"></abbr></th>
-          <th><abbr title="Position">Price Total></th>
-          <th><abbr title="Position">Calcul of total</abbr></th>
-          <th><abbr title="Position"></abbr></th>
-        </tr>
-      </tfoot>
+  <tfoot>
+    <tr>
+      <th>
+        <abbr title="Position"></abbr>
+      </th>
+      <th>
+        <abbr title="Position"></abbr>
+      </th>
+      <th>
+        <abbr title="Position"></abbr>
+      </th>
+      <th>
+        <abbr title="Position">Price Total></th>
+      <th>
+        <abbr title="Position">Calcul of total</abbr>
+      </th>
+      <th>
+        <abbr title="Position"></abbr>
+      </th>
+    </tr>
+  </tfoot>
 
-      <tbody>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <a class="button is-focused is-link is-centered">
-                Delete               
-              </a>
-            </td>
-        </tr>
-      </tbody>
-     </table>
-  </div>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <a class="button is-focused is-link is-centered">
+          Delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-  
 
-    <a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
-      <h2>Customers'List</h2>
-    </a> 
-    <br />
-    <a class="button is-danger is-link is-centered">
-     <h2>Add a product</h2>
-    </a> 
-    <br />
 
-    <a class="button is-focused is-link is-centered" href="/quotations/view">
-      <h2>Save and view pdf</h2>
-    </a>    
-    <br />
+<a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
+  <h2>Customers'List</h2>
+</a>
+<br />
+<a class="button is-danger is-link is-centered">
+  <h2>Add a product</h2>
+</a>
+<br />
+
+<a class="button is-focused is-link is-centered" href="/quotations/view">
+  <h2>Save and view pdf</h2>
+</a>
+<br />

@@ -11,7 +11,40 @@ router.use((req, res, next) => {
 
 router.get("/new", (req, res, next) => {
   if(req.user) {
-    res.render("quotation/new");
+    const currentDate = new Date();
+    let currentMonth;
+
+    if(currentDate.getMonth() + 1 < 10) {
+      currentMonth = "0" + (currentDate.getMonth() + 1);
+    } else {
+      currentMonth = currentDate.getMonth() + 1;
+    }
+    const today = currentDate.getFullYear() + currentMonth + currentDate.getDate();
+
+    Quotation.find({quotationNumber: {$regex: today, $options: "i"}})
+    .then(quotations => {
+      let currentMax = 0;
+
+      quotations.forEach(quotation => {
+        Number(quotation.quotationNumber.split("-")[1]) > currentMax ? currentMax = Number(quotation.quotationNumber.split("-")[1]) : null;
+      });
+      
+      let newNumber;
+
+      if(currentMax + 1 >= 10) {
+        newNumber = "0" + (currentMax + 1);
+      } else if(currentMax + 1 >= 100) {
+        newNumber = (currentMax + 1).toString();
+      } else {
+        newNumber = "00" + (currentMax + 1);
+      }
+
+      res.locals.number = today + "-" + newNumber;
+      res.render("quotation/new");
+    })
+    .catch(err => {
+      next(err);
+    })
   } else {
     res.redirect("/auth/login");
   }
