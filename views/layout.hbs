@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-     <nav class="navbar {{navColor}} is-fixed-top" role="navigation" aria-label="dropdown navigation">
+     <nav class="navbar {{navColor}} is-fixed-top " role="navigation" aria-label="dropdown navigation">
        {{#if user}}
           <div class="navbar-brand is-white-bis">
             <a class="navbar-item" href="/">
@@ -28,31 +28,23 @@
               <a class="navbar-item" href="/customers">Customers</a> 
               <a class="navbar-item" href="/products">Products</a>           
            </div>
-
+        
             <div class="navbar-end">
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                  Right
-                </a>
-
-                <div class="navbar-dropdown is-right">
-                  <a class="navbar-item">
-                    Overview
-                  </a>
-                  <a class="navbar-item">
-                    Elements
-                  </a>
-                  <a class="navbar-item">
-                    Components
-                  </a>
-                  <hr class="navbar-divider">
-                  <div class="navbar-item">
-                    Version 0.7.0
-                  </div>
-                  
               <a class="navbar-item" href="/logout">Log out</a>
-              
-                 </div>
+               <div class="navbar-item has-dropdown is-hoverable is-active">
+                <a id="Menu" class="navbar-link">
+                  Menu
+                </a>
+                <di class="navbar-dropdown is-right">
+                    <a class="navbar-item" href="/quotations">Quotations</a>
+                    <a class="navbar-item" href="/invoices">Invoices</a>
+                    <a class="navbar-item" href="/delivery-forms">Delivery forms</a>
+                    <a class="navbar-item" href="/customers">Customers</a> 
+                    <a class="navbar-item" href="/products">Products</a>
+                  <div class="navbar-item">
+                    <a class="navbar-item" href="/logout">Log out</a>  
+                  </div>
+                 </di>
               </div>
             </div>
  
