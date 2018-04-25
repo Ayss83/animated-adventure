@@ -1,72 +1,81 @@
 
-<div class="column">
-  <div class="column">
-    <div class="column is-4"> 
-    </div>
-
-    <div class="column is-half is-offset-one-quarter is-centered">
-         <h1 class="title is-1 is-centered">Sign up today !</h1>
-    </div>
-
- <div class="column">
-    <div class="column is-4"> 
-    </div>
-
-    <div class="column is-half is-offset-one-quarter"> 
-      <div class="box">
-       <form action="/auth/signup" method="POST" id="form-container">
-
-        <div class="field">
-          <p class="control has-icons-right">
-            <input class="input is-info" id="usernickname" type="text" name="username" placeholder="Your  username">
-               <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-             </span>
-            </p>
-        </div>
-
-        <div class="field">
-          <p class="control has-icons-right">
-            <input class="input is-warning" id="password" type="password" name="password" placeholder="Your password">
-               <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-             </span>
-            </p>
-        </div>
-
-        <div class="field">
-          <p class="control has-icons-right">
-            <input class="input is-primary" id="username" type="text" name="name" placeholder="Your name">
-               <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-             </span>
-          </p>
-        </div>
-
-         <div class="field">
-          <p class="control has-icons-right">
-            <input class="input is-success" id="useremail" type="email" name="email" placeholder="Your email">
-               <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-             </span>
-          </p>
-        </div>
-
-          {{#if message }}
-            <div class="error-message">{{ message }}</div>
-          {{/if}}
-
-          <div class="buttons is-centered">
-            <button class="button is-success is-centered ">Create your account</button>
-            {{!-- <button href="/auth/login" class="button is-primary is-right">Or login !</button> --}}
-          </div>        
-        </form>
-          
-      </div>
-    </div>
-
-    <div class="column is-4"> 
-    </div>
-
+{{!-- titre  --}}
+<div class="column is-2"> 
 </div>
 
+<div class="column has-text-centered">       
+  <h3 class="title is-3 is-centered">Sign up today !</h3>
+</div>
+
+<div class="column is-2"> 
+</div>
+
+{{!-- colonnes   --}}
+
+
+<div class="columns">
+  <div class="column is-2 is-hidden-mobile"> 
+  </div>
+
+  <div class="column">
+      <div class="box">
+        <div class="columns">
+          <div class="column is-1 is-hidden-mobile"> 
+          </div>
+           <div class="column">
+            <form action="/auth/signup" method="POST" id="form-container">
+
+              <div class="field">
+                <p class="control has-icons-right">
+                  <input class="input is-info" id="usernickname" type="text" name="username" placeholder="Your  username">
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                  </span>
+                  </p>
+              </div>
+
+              <div class="field">
+                <p class="control has-icons-right">
+                  <input class="input is-warning" id="password" type="password" name="password" placeholder="Your password">
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                  </span>
+                  </p>
+              </div>
+
+              <div class="field">
+                <p class="control has-icons-right">
+                  <input class="input is-primary" id="username" type="text" name="name" placeholder="Your name">
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control has-icons-right">
+                  <input class="input is-success" id="useremail" type="email" name="email" placeholder="Your email">
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+
+                {{#if message }}
+                  <div class="error-message">{{ message }}</div>
+                {{/if}}
+
+                <div class="buttons is-centered">
+                  <button class="button is-success is-centered ">Create your account</button>
+                  {{!-- <button href="/auth/login" class="button is-primary is-right">Or login !</button> --}}
+                </div>        
+              </form>
+            </div> 
+
+          <div class="column is-1 is-hidden-mobile"></div>
+      </div>
+      </div>
+      </div>
+   <div class="column is-2 is-hidden-mobile"> </div>
+  
+</div>
