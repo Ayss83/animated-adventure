@@ -5,12 +5,12 @@
     <div class="column is-one-quarter"></div>
 
     <div class="column is-half">
-      <h1 class="title is-1 is-centered">Quotation N°{{DATE / NBRE}}</h1>
+      <h1 class="title is-1 is-centered">Quotation #{{quotation.quotationNumber}}</h1>
     </div>
 
     <div class="column is-2">
-      <a class="button is-focused is-link is-centered" href="/quotations">
-          <h2>Quotations'List</h2>
+      <a class="button is-focused is-link is-centered" href="/quotations/1">
+          <h2>Quotations' List</h2>
         </a> 
     </div>
     
@@ -31,40 +31,18 @@
   <table class="table">
     <tbody>
         <tr>
-            <td><h2>Name ot your company</h2></td>
-            <td></td>
-            <td><h2>Name ot your customer</h2></td>
-            <td></td>
+            <td><h2>{{quotation.customer.firstName}} {{quotation.customer.lastName}}</h2></td>
         </tr>
         <tr>
-            <td>Details</td>
-            <td></td>
-            <td>Details</td>
-            <td></td>
+            <td>{{quotation.customer.address1}}</td>
         </tr>
+        {{#if quotation.customer.address2}}
          <tr>
-            <td>Address 1</td>
-            <td></td>
-            <td>Address 1</td>
-            <td></td>
+            <td>{{quotation.customer.address2}}</td>
         </tr>
+        {{/if}}
         <tr>
-          <td>Zip Code</td>
-          <td></td>
-          <td>Zip Code</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>City</td>
-          <td></td>
-          <td>City</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Details</td>
-          <td></td>
-          <td>Details</td>
-          <td></td>
+          <td>{{quotation.customer.zipCode}} {{quotation.customer.city}}</td>
         </tr>
       </tbody>
   </table>
@@ -87,14 +65,24 @@
           <th><abbr title="Position"></abbr></th>
         </tr>
       </thead>
-
-    <tfoot>
+      <tbody>
+        {{#each quotation.products}}
+          <tr>
+            <td>{{this.designation}}</td>
+            <td>{{this.quantity}}</td>
+            <td>{{this.unitPriceWT}} €</td>
+            <td>{{this.vatRate}} %</td>
+            <td>{{this.amount}} €</td>
+          </tr>
+        {{/each}}
+      </tbody>
+      <tfoot>
         <tr>
           <th><abbr title="Position"></abbr></th>
           <th><abbr title="Position"></abbr></th>
           <th><abbr title="Position"></abbr></th>
           <th><abbr title="Position">Price Total></th>
-          <th><abbr title="Position">Calcul of total</abbr></th>
+          <th><abbr title="Position">{{quotation.total}} €</abbr></th>
           <th><abbr title="Position"></abbr></th>
         </tr>
       </tfoot>
