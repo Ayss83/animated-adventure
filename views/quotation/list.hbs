@@ -15,11 +15,10 @@
 </div>
 {{!-- colonnes   --}}
 
-
   <div class="columns is-desktop">
-      <div class="box" style="height: 650px">
+      <div class="box">
         <table class="table">
-          <div class="columns has-text-centered has-text-weight-bold is-line-height">
+          <div class="columns has-text-centered has-text-weight-bold is-line-height is-hidden-mobile" height="30">
               <div class="column">
                 Quotation number
               </div>
@@ -28,40 +27,42 @@
                 Customer       
               </div>
           
-              <div class="column">
+              <div class="column ">
                 Amount 
               </div>
     
-              <div class="column">
+              <div class="column ">
                 Establishment date
               </div>
         
-              <div class="column">
+              <div class="column ">
                 Accepted
               </div>
           </div>
        </table>
 
       {{#each quotationsList}}
-      <div class="columns has-text-centered tr">
-        <div class="column">
-          {{this.quotationNumber}}
-        </div>
-      
-        <div class="column">
-          {{this.customer.firstName}} {{this.customer.lastName}}     
-        </div>
-    
-        <div class="column">
-          {{this.amount}}
-        </div>
-
-        <div class="column">
-          {{this.convertedDate}}
-        </div>
-    
-        <div class="column">
-          {{#if this.accepted}} Yes {{else}} No {{/if}}
+      <div class="tr">
+        <div class="columns is-gapless" height="20">
+            <div class="column">
+              {{this.quotationNumber}}
+            </div>
+          
+            <div class="column">
+              {{this.customer.firstName}} {{this.customer.lastName}}     
+            </div>
+        
+            <div class="column is-hidden-touch">
+              {{this.amount}}
+            </div>
+  
+            <div class="column is-hidden-touch">
+              {{this.convertedDate}}
+            </div>
+       
+            <div class="column is-hidden-touch">
+              {{#if this.accepted}} Yes {{else}} No {{/if}}
+            </div>
         </div>
       </div>
       {{/each}}  

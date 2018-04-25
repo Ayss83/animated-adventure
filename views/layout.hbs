@@ -11,86 +11,71 @@
   </head>
   <body>
     <header>
-     <nav class="navbar {{navColor}} is-fixed-top " role="navigation" aria-label="dropdown navigation">
-       {{#if user}}
-          <div class="navbar-brand is-white-bis">
-            <a class="navbar-item" href="/">
-              <img src="/images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
-            </a>
-            <a class="navbar-item" href="/">Zinvoices</a>
-          </div>
 
-          <div class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item" href="/quotations/1">Quotations</a>
-              <a class="navbar-item" href="/invoices">Invoices</a>
-              <a class="navbar-item" href="/delivery-forms">Delivery forms</a>
-              <a class="navbar-item" href="/customers">Customers</a> 
-              <a class="navbar-item" href="/products">Products</a>           
-           </div>
-        
-            <div class="navbar-end">
-              <a class="navbar-item" href="/auth/logout">Log out</a>
+          <nav class="navbar is-fixed-top {{navColor}}"  role="navigation">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                  <img src="images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="70">
+                </a>
+                <a class="navbar-item has-text-white-bis has-text-weight-bold is-size-4" href="/">
+                  Zinvoices
+                </a>
 
-               <div id="navbarMenuHeroA" class="navbar-menu">
+            {{#if user}}
+                <span class="navbar-burger {{navColor}} burger has-text-white-bis" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu is-link">
+                <div class="navbar-end">
+                  <a class="navbar-item has-text-grey-darker has-text-weight-semibold" href="/quotations">
+                    Quotations
+                  </a>
+                  <a class="navbar-item has-text-grey-darker has-text-weight-semibold" href="/invoices">
+                    Invoices
+                  </a>
+                  <a class="navbar-item has-text-grey-darker has-text-weight-semibold" href="/delivery-forms">
+                   Delivery forms
+                  </a>
+                  <a class="navbar-item has-text-grey-darker has-text-weight-semibold" href="/customers">
+                    Customers
+                  </a>
+                  <a class="navbar-item has-text-grey-darker has-text-weight-semibold" href="/products">
+                    Products
+                  </a>
+                  <span class="navbar-item">
+                    <a class="button {{navColor}} is-inverted" href="/logout">
+                      Log out
+                    </a>
+                  </span>
+                </div>
+              </div>
+                {{else}}
+              <div class="navbar-brand">
+                  <a class="navbar-item" href="/">
+                    <img src="images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="70">
+                  </a>
+                  <a class="navbar-item" href="/">Zinvoices</a>
+                </div>
+
+                <div class="navbar-menu">
                   <div class="navbar-end">
-                    <a class="navbar-item is-active">
-                      Home
-                    </a>
-                    <a class="navbar-item">
-                      Examples
-                    </a>
-                    <a class="navbar-item">
-                      Documentation
-                    </a>
-                    <span class="navbar-item">
-                      <a class="button is-primary is-inverted">
-                        <span class="icon">
-                          <i class="fab fa-github"></i>
-                        </span>
-                        <span>Download</span>
-                      </a>
-                    </span>
+                    <a class="navbar-item" href="/auth/login">Log in</a>
+                    <a class="navbar-item" href="/auth/signup">Sign up</a>
                   </div>
                 </div>
-    
-               <div class="navbar-item has-dropdown is-hoverable is-active">
-                <a id="Menu" class="navbar-link">
-                  Menu
-                </a>
-                <di class="navbar-dropdown is-right">
-                    <a class="navbar-item" href="/quotations/1">Quotations</a>
-                    <a class="navbar-item" href="/invoices">Invoices</a>
-                    <a class="navbar-item" href="/delivery-forms">Delivery forms</a>
-                    <a class="navbar-item" href="/customers">Customers</a> 
-                    <a class="navbar-item" href="/products">Products</a>
-                  <div class="navbar-item">
-                    <a class="navbar-item" href="/auth/logout">Log out</a>  
-                  </div>
-                 </di>
-              </div>
+              {{/if}}
             </div>
- 
-
-        {{else}}
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="images/logo-white-bold.png" alt="zinvoices logo" width="auto" height="28">
-            </a>
-            <a class="navbar-item" href="/">Zinvoices</a>
-          </div>
-
-          <div class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item" href="/auth/login">Log in</a>
-              <a class="navbar-item" href="/auth/signup">Sign up</a>
-            </div>
-          </div>
-        {{/if}}
-      </nav>
-    </header>
+          </nav>
+   </header>
 
     {{{body}}}
 
+      <script src="/javascripts/layout.js"></script>   
+
   </body>
+
 </html>
