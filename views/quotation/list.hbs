@@ -16,8 +16,7 @@
 {{!-- colonnes   --}}
 
   <div class="columns is-desktop">
-      <div class="box" style="height: 650px">
-        <table class="table">
+      <div class="box" >
           <div class="columns has-text-centered has-text-weight-bold is-line-height " height="30">
               <div class="column">
                 Quotation number
@@ -27,25 +26,21 @@
                 Customer       
               </div>
           
-              <div class="column is-hidden-touch">
+              <div class="column">
                 Amount 
               </div>
     
-              <div class="column is-hidden-touch">
+              <div class="column">
                 Establishment date
               </div>
         
-              <div class="column is-hidden-touch">
+              <div class="column">
                 Accepted
               </div>
           </div>
-       </table>
 
       {{#each quotationsList}}
-      <div class="tr">
-        <div class="column" height="10">
-            </div>
-        <div class="columns is-gapless" height="20">
+        <div class="columns has-text-centered is-gapless" height="20">
             <div class="column">
               {{this.quotationNumber}}
             </div>
@@ -54,23 +49,21 @@
               {{this.customer.firstName}} {{this.customer.lastName}}     
             </div>
         
-            <div class="column is-hidden-touch">
+            <div class="column is-hidden-mobile">
               {{this.amount}}
             </div>
   
-            <div class="column is-hidden-touch">
+            <div class="column is-hidden-mobile">
               {{this.convertedDate}}
             </div>
        
-            <div class="column is-hidden-touch">
+            <div class="column is-hidden-mobile">
               {{#if this.accepted}} Yes {{else}} No {{/if}}
             </div>
         </div>
-      </div>
           {{/each}}  
     </div>  
   </div> 
-</div> 
 <div class="columns">
    <div class="column is-2"> 
     </div>
@@ -84,7 +77,6 @@
       </a>  
     </div>
   </div>
-</div>
 
 
 {{!-- pagination  --}}
