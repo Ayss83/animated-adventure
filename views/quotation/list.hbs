@@ -1,26 +1,82 @@
+{{!-- titre  --}}
+
 <div class="columns">
    <div class="column is-2"> 
     </div>
 </div>
 
-<div class="columns">
-
-    <div class="column">       
-     <h1 class="title is-3 is-centered">Quotations List</h1>
-    </div>
-
-    <div class="column is-narrow">
-      <div style="width: 80px;">
-        <a class="button is-primary is-right is-small" href="/">
-          Dashboard</a>  
-    </div>
-  </div>
-
+<div class="column">       
+     <h3 class="title is-3 is-centered">Quotations List</h3>
 </div>
 
-  <div class="columns is-desktop">
+<div class="columns">
+   <div class="column is-2"> 
+    </div>
+</div>
+{{!-- colonnes   --}}
 
-    <div class="column">
+
+  <div class="columns is-desktop">
+      <div class="box">
+        <table class="table">
+          <div class="columns has-text-centered has-text-weight-bold is-line-height">
+              <div class="column">
+                Quotation number
+              </div>
+            
+              <div class="column">
+                Customer       
+              </div>
+          
+              <div class="column">
+                Amount 
+              </div>
+    
+              <div class="column">
+                Establishment date
+              </div>
+        
+              <div class="column">
+                Accepted
+              </div>
+          </div>
+       </table>
+
+      {{#each quotationsList}}
+
+        <div class="columns has-text-centered">
+            <div class="column">
+              {{this.quotationNumber}}
+            </div>
+          
+            <div class="column">
+              {{this.customer.firstName}} {{this.customer.lastName}}     
+            </div>
+        
+            <div class="column">
+              {{this.amount}}
+            </div>
+  
+            <div class="column">
+              E{{this.date}}
+            </div>
+       
+            <div class="column">
+              {{#if this.accepted}} Yes {{else}} No {{/if}}
+            </div>
+        </div>
+          {{/each}}  
+    </div>  
+  </div> 
+</div> 
+<div class="columns">
+   <div class="column is-2"> 
+    </div>
+</div>
+
+{{!-- tableau  --}}
+
+    <div class="column is-desktop">
       <div class="box" style="min-height: 400px">
         <table class="table">
 
@@ -49,6 +105,8 @@
     </div> 
 
   </div> 
+
+{{!-- bouton   --}}
 <div class="columns">
     <div class="column is-2"> 
       <a class="button is-link is-focused is-centered" href="/quotations/new">
@@ -58,6 +116,8 @@
   </div>
 </div>
 
+
+{{!-- pagination  --}}
 <nav class="pagination" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
   <a class="pagination-next">Next page</a>
