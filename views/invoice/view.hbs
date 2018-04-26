@@ -3,7 +3,7 @@
 </div>
 
 <div class="column has-text-centered">       
-  <h3 class="title is-3 is-centered">Invoice #{{quotation.quotationNumber}}</h3>
+  <h3 class="title is-3 is-centered">Invoice #{{invoice.invoiceNumber}}</h3>
 </div>
 
 <div class="column is-2"> 
@@ -22,14 +22,14 @@
 
         <div class="column">
             <ul>
-              <li>{{quotation.customer.firstName}} {{quotation.customer.lastName}}
+              <li>{{invoice.customer.firstName}} {{invoice.customer.lastName}}
               </li>
-              <li>{{quotation.customer.address1}}
+              <li>{{invoice.customer.address1}}
               </li>
-                {{#if quotation.customer.address2}}
-                <li>{{quotation.customer.address2}}  </li>
+                {{#if invoice.customer.address2}}
+                <li>{{invoice.customer.address2}}  </li>
                 {{/if}} 
-              <li>{{quotation.customer.zipCode}} {{quotation.customer.city}}
+              <li>{{invoice.customer.zipCode}} {{invoice.customer.city}}
               </li>
             </ul>
         </div>
@@ -54,7 +54,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#each quotation.products}}
+              {{#each invoice.products}}
                 <tr>
                   <td>{{this.designation}}</td>
                   <td class="is-hidden-mobile"><p class="has-text-centered">{{this.quantity}}</p></td>
@@ -71,7 +71,7 @@
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Price Total</p></th>
-                <th><abbr title="Position"><p class="has-text-right">{{quotation.total}} €</p></abbr></th>
+                <th><abbr title="Position"><p class="has-text-right">{{invoice.total}} €</p></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </tfoot>
@@ -87,29 +87,30 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-    {{!-- bouton    --}}
+  {{!-- bouton    --}}
 <div class="columns"> 
   <div class="column is-2 is-hidden-mobile"> 
   </div>
-  <div class="column is-hidden-mobile"></div>
+  <div class="column"> 
+          <a  class="button is-danger is-centered is-outlined " href="/invoices/delete/{{invoice._id}}">
+            Delete
+          </a>    
+          </div>
   <div class="column has-text-centered"> 
-          <a  class="button {{navColor}} is-centered is-outlined " href="/invoices/1">
+          <a  class="button {{navColor}} is-centered is-outlined " href="/quotations/1">
             Return to list
           </a>    
           </div>
+  <div class="column has-text-centered"> 
+          <a  class="button is-success is-centered " href="/invoices/paid/{{invoice._id}}">
+            Invoice paid 
+          </a>    
+          </div>
   <div class="column has-text-right"> 
-          <a  class="button {{navColor}} is-centered " href="/invoices/view">
-            Edit pdf
-          </a>     
+            <a  class="button {{navColor}} is-centered is-outlined " href="/invoices/view">
+              Edit pdf
+            </a>     
   </div>
   <div class="column is-2 is-hidden-mobile"> 
   </div>
 </div>
-
-
-
-{{!-- 
- <span class="button {{navColor}} is-centered is-outlined " href="/quotations/view">Save</span>
-<a class="button is-success is-link is-centered is-small">Add a product</a> 
-<a class="button is-link is-centered is-small is-outlined">Delete</a>
-                    --}}

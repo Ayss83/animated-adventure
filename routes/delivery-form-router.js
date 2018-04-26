@@ -7,15 +7,15 @@ router.use((req, res, next) => {
 });
 
 router.get("/", (req, res, next) => {
-  res.render("delivery-form/list");
+  res.render("delivery/list");
 });
 
 router.get("/new", (req, res, next) => {
-  res.render("delivery-form/new");
+  res.render("delivery/new");
 });
 
 router.get("/view", (req, res, next) => {
-  res.render("delivery-form/view");
+  res.render("delivery/view");
 })
 
 module.exports = router;
