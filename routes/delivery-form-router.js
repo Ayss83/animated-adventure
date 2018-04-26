@@ -156,8 +156,8 @@ router.post("/new", (req, res, next) => {
       const fieldToRetrieve = productFields.shift();
       currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve];
     }
-    console.log(deliveryToSave);
     deliveryToSave.products.push(currentProduct);
+    console.log(deliveryToSave);
   }
 
   const currentCustomer = deliveryToSave.customer;
@@ -171,7 +171,7 @@ router.post("/new", (req, res, next) => {
     return DeliveryForm.create(deliveryToSave)
   })
   .then(() => {
-    res.redirect("/quotations/1");
+    res.redirect("/delivery-forms/1");
   })
   .catch(err => {
     next(err);

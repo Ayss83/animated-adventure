@@ -3,7 +3,7 @@
 </div>
 
 <div class="column has-text-centered">       
-  <h3 class="title is-3 is-centered">Delivery #{{quotation.quotationNumber}}</h3>
+  <h3 class="title is-3 is-centered">Delivery #{{delivery.deliveryNumber}}</h3>
 </div>
 
 <div class="column is-2"> 
@@ -21,32 +21,34 @@
         <div class="column is-1 is-hidden-mobile"></div>
 
         <div class="column">
+          <h2><strong>Customer</strong></h2>
+          <br>
             <ul>
-              <li>{{quotation.customer.firstName}} {{quotation.customer.lastName}}
+              <li>{{delivery.customer.firstName}} {{delivery.customer.lastName}}
               </li>
-              <li>{{quotation.customer.address1}}
+              <li>{{delivery.customer.address1}}
               </li>
-                {{#if quotation.customer.address2}}
-                <li>{{quotation.customer.address2}}  </li>
+                {{#if delivery.customer.address2}}
+                <li>{{delivery.customer.address2}}  </li>
                 {{/if}} 
-              <li>{{quotation.customer.zipCode}} {{quotation.customer.city}}
+              <li>{{delivery.customer.zipCode}} {{delivery.customer.city}}
               </li>
             </ul>
         </div>
-        <div class="column is-hidden-mobile"><a class="button is-success is-link is-centered is-small">Duplicate</a></div>
+        {{!-- <div class="column is-hidden-mobile"><a class="button is-success is-link is-centered is-small">Duplicate</a></div>
         <div class="column">
             <ul>
-              <li>{{quotation.customer.firstName}} {{quotation.customer.lastName}}
+              <li>{{delivery.customer.firstName}} {{delivery.customer.lastName}}
               </li>
-              <li>{{quotation.customer.address1}}
+              <li>{{delivery.customer.address1}}
               </li>
-                {{#if quotation.customer.address2}}
-                <li>{{quotation.customer.address2}}  </li>
+                {{#if delivery.customer.address2}}
+                <li>{{delivery.customer.address2}}  </li>
                 {{/if}} 
-              <li>{{quotation.customer.zipCode}} {{quotation.customer.city}}
+              <li>{{delivery.customer.zipCode}} {{delivery.customer.city}}
               </li>
             </ul>
-        </div>
+        </div> --}}
         <div class="column is-hidden-touch"></div>
      </div>
 
@@ -62,19 +64,13 @@
               </tr>
             </thead>
             <tbody>
-              {{#each delivry-form.products}}
+              {{#each delivery.products}}
                 <tr>
                   <td>{{this.designation}}</td>
                   <td class="is-hidden-mobile"><p class="has-text-centered">{{this.quantity}}</p></td>
                 </tr>
               {{/each}}
             </tbody>
-            <tfoot>
-              <tr>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Total</p></th>
-                <th><abbr title="Position"><p class="has-text-right">{{quantity.total}} €</p></abbr></th>
-              </tr>
-            </tfoot>
           </table>
       </div>
 
@@ -94,22 +90,22 @@
   <div class="column is-2 is-hidden-mobile"> 
   </div>
   <div class="column"> 
-          <a  class="button is-danger is-centered is-outlined " href="/delivery/delete/{{delivery-form._id}}">
+          <a  class="button is-danger is-centered is-outlined " href="/delivery-forms/delete/{{delivery-form._id}}">
             Delete
           </a>    
           </div>
   <div class="column has-text-centered"> 
-          <a  class="button {{navColor}} is-centered is-outlined " href="/delivery/1">
+          <a  class="button {{navColor}} is-centered is-outlined " href="/delivery-forms/1">
             Return to list
           </a>    
           </div>
   <div class="column has-text-centered"> 
-          <a  class="button is-success is-centered " href="/delivery/delivered/{{delivery-form._id}}">
+          <a  class="button is-success is-centered " href="/delivery-forms/delivered/{{delivery-form._id}}">
             Products delivered 
           </a>    
           </div>
   <div class="column has-text-right"> 
-            <a  class="button {{navColor}} is-centered is-outlined " href="/delivery/view">
+            <a  class="button {{navColor}} is-centered is-outlined " href="/delivery-forms/view">
               Edit pdf
             </a>     
   </div>
