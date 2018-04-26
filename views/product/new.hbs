@@ -12,7 +12,7 @@
   </div>
 
   <div class="column has-text-centered">
-  <input class="input is-large" type="text" name="quotationNumber" readonly value="{{number}}">
+  <input class="input is-large" type="text" name="productName" readonly value="text">
   </div>
 
   <div class="column is-2 is-hidden-mobile"> 
@@ -51,28 +51,15 @@
 
        <form action="/quotations/new" method="post">
      {{!-- infos customer  --}}
-          <div class="columns is-paddingless is-marginless">
-
-            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
-            
-            <div class="column is-paddingless is-marginless has-text-centered">First Name</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="firstName"></div>
-            <div class="column is-paddingless is-marginless has-text-centered">Address</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="address1"></div>
-
-            <div class="column is-2 is-hidden-mobile"></div>
-          </div>
-
+ 
 
           <div class="columns is-paddingless is-marginless">
 
             <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
             
-            <div class="column is-paddingless is-marginless has-text-centered">LastName</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="lastName"></div>
-            <div class="column is-paddingless is-marginless has-text-centered">Address'details</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="address2"></div>
-
+            <div class="column is-paddingless is-marginless has-text-centered">Designation</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="designation"></div>
+            
             <div class="column is-2 is-hidden-mobile"></div>
           </div>
 
@@ -82,89 +69,33 @@
 
             <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
             
-            <div class="column is-paddingless is-marginless has-text-centered">Phone</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="phone"></div>
-            <div class="column is-paddingless is-marginless has-text-centered">Zip Code</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="zipCode"></div>
-
+            <div class="column is-paddingless is-marginless has-text-centered">Unit price</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="unitPriceWT"></div>
+            
             <div class="column is-2 is-hidden-mobile"></div>
           </div>
+
+          <br />
 
           <div class="columns is-paddingless is-marginless">
 
             <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
             
-            <div class="column is-paddingless is-marginless has-text-centered">Email</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="email"></div>
-            <div class="column is-paddingless is-marginless has-text-centered">City</div>
-            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="city"></div>
-
+            <div class="column is-paddingless is-marginless has-text-centered"> VAT rate</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="vatRate"></div>
+            
             <div class="column is-2 is-hidden-mobile"></div>
           </div>
 
-
+    
      <div class="column is-1"></div>
 
-{{!-- tableau  --}}
-
-    <div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-link is-centered is-small">Add a product</button>
-       </div>
-       <div class="column is-1 is-hidden-mobile"></div>
-    </div>
-
-    <div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
-
-        <div class="column has-text-centered">
-          <table class="table is-striped is-hoverable is-fullwidth">
-            <thead>
-              <tr>
-                <th><abbr title="Position">Designation</abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quantity</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">TVA</p></abbr></th>
-                <th><abbr title="Position"><p class="has-text-right">Total Price</p></abbr></th>
-                <th  class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-              </tr>
-            </thead>
-            <tbody class="productsContainer">
-                <tr>
-                  <td><input class="input is-fullwidth is-small" type="text" name="designation"></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small"type="text" name="quantity"></p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small"type="text" name="unitPrice" placeholder="€"></p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small" type="text" name="vatRate" placeholder="%"></p></td>
-                  <td><p class="has-text-right"><input class="input is-fullwidth is-small" type="text" placeholder="€"></p></td>
-                  <td class="is-hidden-mobile"><button type="button" class="button is-focused is-link is-centered is-small">Delete</button></td>
-                </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Price Total</p></th>
-                <th><abbr title="Position"><p class="has-text-right">{{quotation.total}}€</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="column is-1 is-hidden-mobile"></div>
-      </div>
-
-    <div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-link is-centered is-small">Add a product</button>
-       </div>
-       <div class="column is-1 is-hidden-mobile"></div>
-    </div>
+{{!-- boutons   --}}
 
 <div class="columns">
        <div class="column is-1 is-hidden-mobile"></div>
        <div class="column has-text-centered">
-        <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
+        <button id="submitBtn" type="submit" class="button {{navColor}} is-centered">Save</button>
        </div>
        <div class="column is-1 is-hidden-mobile"></div>
  </div>
@@ -174,7 +105,7 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-{{!-- boutons   --}}
+
 
 
 <script src="/javascripts/quotations/quotationNew.js"></script>

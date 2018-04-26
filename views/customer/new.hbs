@@ -1,0 +1,174 @@
+{{!-- titre  --}}
+<div class="column is-2"> 
+</div>
+
+<div class="columns"> 
+
+  <div class="column is-2 is-hidden-mobile"> 
+  </div>
+
+  <div class="column has-text-right is-hidden-mobile">       
+    <h3 class="title is-2 is-centered">New customer </h3>
+  </div>
+
+  <div class="column has-text-centered">
+  <input class="input is-large" type="text" name="lastName" readonly value="text">
+  </div>
+
+  <div class="column is-2 is-hidden-mobile"> 
+  </div>
+</div>
+
+<div class="columns"> 
+
+  <div class="column is-2 is-hidden-mobile"> 
+  </div>
+
+  <div class="column has-text-right is-hidden-mobile">       
+   <h3 class="title is-2 is-centered">Date</h3>
+  </div>
+
+  
+  <div class="column has-text-centered">
+    <input  class="input is-large" type="date" name="date"></h3>
+  </div>
+
+  <div class="column is-2 is-hidden-mobile"> 
+  </div>
+</div>
+
+<div class="column is-2 is-hidden-mobile"> 
+</div>
+{{!-- colonnes   --}}
+<div class="columns">
+  <div class="column is-1 is-hidden-mobile"> 
+  </div>
+{{!-- box   --}}
+  <div class="column">  
+     <div class="box">
+
+  <div class="column is-hidden-mobile"></div> 
+
+       <form action="/quotations/new" method="post">
+     {{!-- infos customer  --}}
+ 
+
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">First name</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="firstName"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />
+        
+         <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Last name</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="lastName"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />
+
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Phone</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="phone"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />
+    
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Email</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="email"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />
+            
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Adresse</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="adresse1"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />     
+             
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Adresse's Details</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="adresse2"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />  
+
+          <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">Zip code</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="zipCode"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+
+          <br />  
+
+            <div class="columns is-paddingless is-marginless">
+
+            <div class="column is-paddingless is-marginless is-1 is-hidden-mobile"></div>
+            
+            <div class="column is-paddingless is-marginless has-text-centered">City</div>
+            <div class="column is-paddingless is-marginless"><input class="input is-fullwidth is-small" type="text" name="city"></div>
+            
+            <div class="column is-2 is-hidden-mobile"></div>
+          </div>
+    
+     <div class="column is-1"></div>
+
+{{!-- boutons   --}}
+
+<div class="columns">
+       <div class="column is-1 is-hidden-mobile"></div>
+       <div class="column has-text-centered">
+        <button id="submitBtn" type="submit" class="button {{navColor}} is-centered">Save</button>
+       </div>
+       <div class="column is-1 is-hidden-mobile"></div>
+ </div>
+
+ </form>
+{{!-- colonnes   --}}
+  <div class="column is-1 is-hidden-mobile"></div>
+</div>
+
+
+
+
+<script src="/javascripts/quotations/quotationNew.js"></script>
+
+{{!-- <a class="button is-warning has-text-white-bis is-link is-centered" href="/customers">
+  <h2>Customers'List</h2>
+</a> --}}
