@@ -16,9 +16,8 @@ const invoiceSchema = new Schema({
     address2: {type: String},
     zipCode: {type: String, required: true},
     city: {type: String, required: true}
-  }
-}, {
-  timestamps: true
+  },
+  date: {type: Date, required: true}
 });
 
 const Invoice = mongoose.model("Invoice", invoiceSchema);

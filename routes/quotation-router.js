@@ -9,7 +9,6 @@ router.use((req, res, next) => {
   next();
 });
 
-
 router.get("/new", (req, res, next) => {
   if(req.user) {
     const currentDate = new Date();
@@ -136,7 +135,7 @@ router.post("/new", (req, res, next) => {
   const customerFields = inputNames.slice(2, 10);
   const productFields = inputNames.slice(10);
   const productsNumber = productFields.length / 4;
-console.log(quotationFields, customerFields, productFields);
+
   quotationFields.forEach(field => {
     quotationToSave[field] = req.body[field]
   });
@@ -172,6 +171,5 @@ console.log(quotationFields, customerFields, productFields);
     next(err);
   });
 });
-
 
 module.exports = router;
