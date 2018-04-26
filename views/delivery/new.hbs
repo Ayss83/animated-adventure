@@ -1,4 +1,4 @@
-<form action="/quotations/new" method="post">
+<form action="/delivry-forms/new" method="post">
 
 {{!-- titre  --}}
 <div class="column is-2"> 
@@ -10,11 +10,11 @@
   </div>
 
   <div class="column has-text-right is-hidden-mobile">       
-    <h3 class="title is-2 is-centered">Quotation N°</h3>
+    <h3 class="title is-2 is-centered">Delivry-form N°</h3>
   </div>
 
   <div class="column has-text-centered">
-  <input class="input is-large" type="text" name="quotationNumber" readonly value="{{number}}">
+  <input class="input is-large" type="text" name="delivry-formNumber" readonly value="{{number}}">
   </div>
 
   <div class="column is-2 is-hidden-mobile"> 
@@ -117,13 +117,6 @@
 
     <div class="columns">
        <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-centered is-small">Add a product</button>
-       </div>
-       <div class="column is-1 is-hidden-mobile"></div>
-    </div>
-
-    <div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
 
         <div class="column has-text-centered">
           <table class="table is-striped is-hoverable is-fullwidth">
@@ -154,9 +147,6 @@
                   <td>
                     <input class="input is-fullwidth is-small" type="text" placeholder="€" readonly >
                   </td>
-                  <td class="is-hidden-mobile">
-                    <button type="button" class="button is-focused is-link is-centered is-small deleteBtn">Delete</button>
-                  </td>
                 </tr>
             </tbody>
             <tfoot>
@@ -164,8 +154,8 @@
                 <th></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quotation Total</p></th>
-                <th><abbr title="Position"><p id="quotationTotal" class="has-text-right">0.00€</p></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">delivry-form Total</p></th>
+                <th><abbr title="Position"><p id="delivry-formTotal" class="has-text-right">0.00€</p></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </tfoot>
@@ -173,13 +163,6 @@
         </div>
         <div class="column is-1 is-hidden-mobile"></div>
       </div>
-
-    <div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-centered is-small">Add a product</button>
-       </div>
-       <div class="column is-1 is-hidden-mobile"></div>
-    </div>
 
 <div class="columns">
        <div class="column is-1 is-hidden-mobile"></div>
