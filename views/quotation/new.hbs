@@ -8,30 +8,35 @@
   </div>
 
   <div class="column has-text-right">       
-    <h3 class="title is-3 is-centered">Quotation N°</h3>
+    <h3 class="title is-2 is-centered">Quotation N°</h3>
   </div>
 
-    <div class="column is-2">
-      <a class="button is-focused is-link is-centered" href="/quotations/1">
-          <h2>Quotations'List</h2>
-        </a> 
-    </div>
-    
-    <div class="column is-2">
-      <a class="button is-primary is-link is-centered" href="/">
-          <h2>Dashboard</h2>
-      </a> 
-    </div>
-  
   <div class="column has-text-centered">
   <input class="input is-large" type="text" name="quotationNumber" readonly value="{{number}}">
   </div>
-    {{!-- <h3 class="title is-3 is-centered">Date<input  class="input is-large" type="date" name="date"></h3>
-  </div> --}}
 
   <div class="column is-2"> 
   </div>
 </div>
+
+<div class="columns"> 
+
+  <div class="column is-2"> 
+  </div>
+
+  <div class="column has-text-right">       
+   <h3 class="title is-2 is-centered">Date</h3>
+  </div>
+
+  
+  <div class="column has-text-centered">
+    <input  class="input is-large" type="date" name="date"></h3>
+  </div>
+
+  <div class="column is-2"> 
+  </div>
+</div>
+
 <div class="column is-2"> 
 </div>
 {{!-- colonnes   --}}
@@ -127,13 +132,25 @@
               </tr>
             </thead>
             <tbody class="productsContainer">
-                <tr>
-                  <td><input type="text" name="designation"></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input type="text" name="quantity"></p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input type="text" name="unitPrice" placeholder="€"></p></td>
-                  <td class="is-hidden-mobile"><p class="has-text-centered"><input type="text" name="vatRate" placeholder="%"></p></td>
-                  <td><p class="has-text-right"><input type="text" placeholder="€"></p></td>
-                  <td class="is-hidden-mobile"><button type="button" class="button is-focused is-link is-centered is-small">Delete</button></td>
+                <tr class="product">
+                  <td>
+                    <input class="input is-fullwidth is-small" type="text" name="designation">
+                  </td>
+                  <td class="is-hidden-mobile">
+                      <input type="text" name="quantity" class="initFields input is-fullwidth is-small">
+                  </td>
+                  <td class="is-hidden-mobile">
+                    <input type="text" name="unitPriceWT" class="initFields input is-fullwidth is-small" placeholder="€">
+                  </td>
+                  <td class="is-hidden-mobile">
+                    <input type="text" name="vatRate" class="initFields input is-fullwidth is-small" placeholder="%">
+                  </td>
+                  <td>
+                    <input class="input is-fullwidth is-small" type="text" placeholder="€" readonly >
+                  </td>
+                  <td class="is-hidden-mobile">
+                    <button type="button" class="button is-focused is-link is-centered is-small deleteBtn">Delete</button>
+                  </td>
                 </tr>
             </tbody>
             <tfoot>
@@ -142,7 +159,7 @@
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Price Total</p></th>
-                <th><abbr title="Position"><p class="has-text-right">{{quotation.total}}€</p></abbr></th>
+                <th><abbr title="Position"><p id="quotationTotal" class="has-text-right">0.00€</p></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </tfoot>
@@ -158,133 +175,14 @@
        <div class="column is-1 is-hidden-mobile"></div>
     </div>
 
-    <label>
-      First Name :
-      <input type="text" name="firstName">
-    </label>
-    <br>
-    <label>
-      Last Name :
-      <input type="text" name="lastName">
-    </label>
-    <br>
-    <label>
-      Address :
-      <input type="text" name="address1">
-    </label>
-    <br>
-    <label>
-      Address complement :
-      <input type="text" name="address2">
-    </label>
-    <br>
-    <label>
-      ZIP Code :
-      <input type="text" name="zipCode">
-    </label>
-    <br>
-    <label>
-      City :
-      <input type="text" name="city">
-    </label>
-    <br>
-    <label>
-      Phone :
-      <input type="text" name="phone">
-    </label>
-    <br>
-    <label>
-      Email :
-      <input type="text" name="email">
-    </label>
-    <br>
-
-
-  <div class="column"></div>
-
-  <h2>Products</h2>
-
-    <table class="table">
-
-      <thead>
-        <tr>
-          <th>
-            <abbr title="Position">Designation</abbr>
-          </th>
-          <th>
-            <abbr title="Position">Quantity</abbr>
-          </th>
-          <th>
-            <abbr title="Position">Unit Price</abbr>
-          </th>
-          <th>
-            <abbr title="Position">TVA</abbr>
-          </th>
-          <th>
-            <abbr title="Position">Total Price</abbr>
-          </th>
-          <th>
-            <abbr title="Position"></abbr>
-          </th>
-        </tr>
-      </thead>
-
-      <tfoot>
-        <tr>
-          <th>
-             <button id="addProductBtn" type="button" class="button is-danger is-link is-centered">Add a product</button>
-          </th>
-          <th>
-            <abbr title="Position"></abbr>
-          </th>
-          <th>
-            <abbr title="Position"></abbr>
-          </th>
-          <th>
-            <abbr title="Position">Price Total</th>
-          <th>
-            <abbr id="quotationTotal" title="Position">0.00 €</abbr>
-          </th>
-          <th>
-            <abbr title="Position"></abbr>
-          </th>
-        </tr>
-      </tfoot>
-
-      <tbody class="productsContainer">
-          <tr class="product">
-            <td>
-              <input type="text" name="designation">
-            </td>
-            <td>
-              <input type="text" name="quantity" class="initFields">
-            </td>
-            <td>
-              <input type="text" name="unitPrice" class="initFields">
-            </td>
-            <td>
-              <input type="text" name="vatRate" class="initFields">
-            </td>
-            <td>
-              <input type="text" readonly>
-            </td>
-            <td>
-              <button type="button" class="button is-focused is-link is-centered deleteBtn">
-                Delete
-              </button>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-    <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
+    <div class="columns">
+          <div class="column is-1 is-hidden-mobile"></div>
+          <div class="column has-text-centered">
+            <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
+          </div>
+          <div class="column is-1 is-hidden-mobile"></div>
+    </div>
   </form>
-<div class="columns">
-       <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column has-text-centered">
-        <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
-       </div>
-       <div class="column is-1 is-hidden-mobile"></div>
- </div>
 
 
 {{!-- colonnes   --}}
