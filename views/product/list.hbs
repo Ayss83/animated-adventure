@@ -44,7 +44,7 @@
         <div class="columns has-text-centered is-gapless tr" height="20">
             
             <div class="column">
-              {{this.product.name}}
+              {{this.product.productName}}
             </div>
           
             <div class="column">
@@ -53,17 +53,20 @@
 
         
             <div class="column is-hidden-mobile">
-              {{this.product.unitPrice}}
+              {{this.product.unitPriceWt}}
             </div>
   
             <div class="column is-hidden-mobile">
-              {{this.product.vat}}
+              {{this.product.vatRate}}
             </div>
 
            <div class="column">
-              {{this.convertedDate}}
+              {{this.date}}
             </div>
-  
+                      
+             <div class="column">
+              <a type="button" class="button {{navColor}} is-centered is-outlined is-small" href="product/view" >Upddate</button>
+            </div>
         </div>
           {{/each}}  
     </div> 

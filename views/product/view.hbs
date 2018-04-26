@@ -113,13 +113,19 @@
 
 {{!-- colonnes   --}}
 </div>
-
+<div class="columns"> 
 <div class="column has-text-centered"> 
           <a  class="button {{navColor}} is-centered is-outlined " href="/products/">
             Return to list
           </a>    
           </div>
 
+  <div class="column"> 
+          <a  class="button is-danger is-centered is-outlined " href="/quotations/delete/{{quotation._id}}">
+            Delete
+          </a>    
+          </div>
+ </div>
 
 <script src="/javascripts/products/quotationNew.js"></script>
 

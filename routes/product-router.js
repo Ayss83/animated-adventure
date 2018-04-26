@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const Product = require("../models/Product");
+
 router.use((req, res, next) => {
   res.locals.navColor = "is-danger";
   next();
@@ -11,7 +13,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/new", (req, res, next) => {
-  res.render("product/new");
+res.render("product/new");
 });
 
 router.get("/view", (req, res, next) => {
@@ -53,41 +55,31 @@ router.post("/new", (req, res, next) => {
   };
 
   const inputNames = Object.keys(req.body);
-  const quotationFields = inputNames.slice(0, 2);
-  const customerFields = inputNames.slice(2, 10);
-  const productFields = inputNames.slice(10);
-  const productsNumber = productFields.length / 4;
+  const productFields = inputNames.slice(0, 5);
 
-  quotationFields.forEach(field => {
-    quotationToSave[field] = req.body[field]
+  productFields.forEach(field => {
+    productToSave.product[field] = req.body[field];
   });
 
-  customerFields.forEach(field => {
-    quotationToSave.customer[field] = req.body[field];
-  });
 
-  for(let i = 0; i < productsNumber; i++) {
-    const currentProduct = {};
-    for(let j = 0; j < 4; j++) {
-      const currentProductFields = ["designation", "quantity", "unitPriceWT", "vatRate"]
-      const fieldToRetrieve = productFields.shift();
-      currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve];
-    }
-    quotationToSave.products.push(currentProduct);
-  }
-
-  const currentCustomer = quotationToSave.customer;
-  Customer.find({lastName: currentCustomer.lastName, firstName: currentCustomer.firstName})
-  .then(customer => {
-    if(customer.length === 0) {
-      return Customer.create(currentCustomer)
+  const currentProduct = productToSave.product;
+  Product.find({
+    productName: currentProduct.productName, 
+    date: currentProduct.date,
+    designation: currentProduct.designation,
+    unitPriceWT: currentProduct.unitPriceWT,
+    vatRate: currentProduct.vatRate
+    })
+  .then(product => {
+    if(product.length === 0) {
+      return Product.create(currentProduct)
     }
   })
   .then(() => {
-    return Quotation.create(quotationToSave)
+    return Product.create(productToSave)
   })
   .then(() => {
-    res.redirect("/quotations/1");
+    res.redirect("/products/1");
   })
   .catch(err => {
     next(err);

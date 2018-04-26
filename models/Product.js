@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
-  designation: {type: String, required: true, unique: true},
+  productName: {type: String},
+  date: {type: Date },
+  designation: {type: String },
   unitPriceWT: {type: Number},
   unitPriceTax: {type: Number},
   vatRate: {type: Number, default: 20}
