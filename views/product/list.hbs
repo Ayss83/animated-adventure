@@ -17,6 +17,7 @@
   <div class="column"> 
       <div class="box">
           <div class="columns has-text-centered has-text-weight-bold is-hidden-mobile" height="30">
+                   
               <div class="column">
                Product's name
               </div>
@@ -32,11 +33,16 @@
               <div class="column ">
                 VAT rate
               </div>
+
+              <div class="column">
+                 Creation date
+              </div>
           </div>
 
 {{!-- for each   --}}
       {{#each productsList}}
         <div class="columns has-text-centered is-gapless tr" height="20">
+            
             <div class="column">
               {{this.product.name}}
             </div>
@@ -52,6 +58,10 @@
   
             <div class="column is-hidden-mobile">
               {{this.product.vat}}
+            </div>
+
+           <div class="column">
+              {{this.convertedDate}}
             </div>
   
         </div>
