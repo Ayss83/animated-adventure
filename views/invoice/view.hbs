@@ -87,29 +87,30 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-    {{!-- bouton    --}}
+  {{!-- bouton    --}}
 <div class="columns"> 
   <div class="column is-2 is-hidden-mobile"> 
   </div>
-  <div class="column is-hidden-mobile"></div>
+  <div class="column"> 
+          <a  class="button is-danger is-centered is-outlined " href="/invoices/delete/{{invoice._id}}">
+            Delete
+          </a>    
+          </div>
   <div class="column has-text-centered"> 
-          <a  class="button {{navColor}} is-centered is-outlined " href="/invoices/1">
+          <a  class="button {{navColor}} is-centered is-outlined " href="/quotations/1">
             Return to list
           </a>    
           </div>
+  <div class="column has-text-centered"> 
+          <a  class="button is-success is-centered " href="/invoices/paid/{{invoice._id}}">
+            Invoice paid 
+          </a>    
+          </div>
   <div class="column has-text-right"> 
-          <a  class="button {{navColor}} is-centered " href="/invoices/view">
-            Edit pdf
-          </a>     
+            <a  class="button {{navColor}} is-centered is-outlined " href="/invoices/view">
+              Edit pdf
+            </a>     
   </div>
   <div class="column is-2 is-hidden-mobile"> 
   </div>
 </div>
-
-
-
-{{!-- 
- <span class="button {{navColor}} is-centered is-outlined " href="/invoices/view">Save</span>
-<a class="button is-success is-link is-centered is-small">Add a product</a> 
-<a class="button is-link is-centered is-small is-outlined">Delete</a>
-                    --}}

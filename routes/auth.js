@@ -7,7 +7,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
 authRoutes.get("/auth/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error"), navColor: "is-light"});
+  res.render("auth/login", { "message": req.flash("error"), navColor: "is-grey-light"});
 });
 
 authRoutes.post("/auth/login", (req, res, next) => {
@@ -39,7 +39,7 @@ authRoutes.post("/auth/login", (req, res, next) => {
 });
 
 authRoutes.get("/auth/signup", (req, res, next) => {
-  res.render("auth/signup", {navColor: "is-light"});
+  res.render("auth/signup", {navColor: "is-grey-light"});
 });
 
 authRoutes.post("/auth/signup", (req, res, next) => {
@@ -65,7 +65,7 @@ authRoutes.post("/auth/signup", (req, res, next) => {
 authRoutes.get("/auth/logout", (req, res, next) => {
   req.logout();
   res.locals.user = null;
-  res.render("auth/logout", {navColor: "is-light"});
+  res.render("auth/logout", {navColor: "is-grey-light"});
 });
 
 module.exports = authRoutes;
