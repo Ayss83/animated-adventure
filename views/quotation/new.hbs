@@ -1,9 +1,10 @@
+<form action="/quotations/new" method="post">
+
 {{!-- titre  --}}
 <div class="column is-2"> 
 </div>
 
 <div class="columns"> 
-       <form action="/quotations/new" method="post">
 
   <div class="column is-2 is-hidden-mobile"> 
   </div>
@@ -109,7 +110,7 @@
 
     <div class="columns">
        <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-link is-centered is-small">Add a product</button>
+       <div class="column"><button type="button" class="button addProductBtn is-success is-centered is-small">Add a product</button>
        </div>
        <div class="column is-1 is-hidden-mobile"></div>
     </div>
@@ -123,7 +124,7 @@
               <tr>
                 <th><abbr title="Position">Designation</abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quantity</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price (without tax)</p></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price</p><p class="has-text-centered">(without tax)</p></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">VAT rate</p></abbr></th>
                 <th><abbr title="Position"><p class="has-text-right">Total Price</p></abbr></th>
                 <th  class="is-hidden-mobile"><abbr title="Position"></abbr></th>
@@ -168,19 +169,18 @@
 
     <div class="columns">
        <div class="column is-1 is-hidden-mobile"></div>
-       <div class="column"><button type="button" class="button addProductBtn is-success is-link is-centered is-small">Add a product</button>
+       <div class="column"><button type="button" class="button addProductBtn is-success is-centered is-small">Add a product</button>
        </div>
        <div class="column is-1 is-hidden-mobile"></div>
     </div>
 
-    <div class="columns">
-          <div class="column is-1 is-hidden-mobile"></div>
-          <div class="column has-text-centered">
-            <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
-          </div>
-          <div class="column is-1 is-hidden-mobile"></div>
-    </div>
-  </form>
+<div class="columns">
+       <div class="column is-1 is-hidden-mobile"></div>
+       <div class="column has-text-centered">
+        <button id="submitBtn" type="submit" class="button {{navColor}} is-centered">Save</button>
+       </div>
+       <div class="column is-1 is-hidden-mobile"></div>
+ </div>
 
  </form>
 {{!-- colonnes   --}}
