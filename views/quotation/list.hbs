@@ -75,7 +75,7 @@
     <div class="column is-1 is-hidden-mobile"> 
     </div>
     <div class="column"> 
-      <a class="button is-link is-centered" href="/quotations/new">
+      <a class="button {{navColor}} is-centered" href="/quotations/new">
         <h2>New Quotation</h2>
       </a>  
     </div>
@@ -85,16 +85,16 @@
 {{!-- pagination  --}}
 <div class="columns">
 
-  <div class="column is-1 is-hidden-mobile"></div>
+  <div class="column is-1 is-hidden-mobile "></div>
   
-  <div class="column">
-     <nav class="pagination" role="navigation" aria-label="pagination">
-      <a class="pagination-previous">Previous</a>
-      <a class="pagination-next">Next page</a>
-      <ul class="pagination-list">
+  <div class="column {{navColor}} is-Outlined">
+     <nav class="pagination {{navColor}} is-Outlined" role="navigation" aria-label="pagination">
+      <a class="pagination-previous {{navColor}} is-Outlined">Previous</a>
+      <a class="pagination-next {{navColor}} is-Outlined">Next page</a>
+      <ul class="pagination-list {{navColor}} is-Outlined">
         {{#each pages}}
           <li>
-            <a class="pagination-link" href="/quotations/{{this}}">{{this}}</a>
+            <a class="pagination-link {{navColor}} is-Outlined" href="/quotations/{{this}}">{{this}}</a>
           </li>
         {{/each}}
       </ul>

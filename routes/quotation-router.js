@@ -136,7 +136,7 @@ router.post("/new", (req, res, next) => {
   const customerFields = inputNames.slice(2, 10);
   const productFields = inputNames.slice(10);
   const productsNumber = productFields.length / 4;
-
+console.log(quotationFields, customerFields, productFields);
   quotationFields.forEach(field => {
     quotationToSave[field] = req.body[field]
   });
@@ -150,7 +150,7 @@ router.post("/new", (req, res, next) => {
     for(let j = 0; j < 4; j++) {
       const currentProductFields = ["designation", "quantity", "unitPriceWT", "vatRate"]
       const fieldToRetrieve = productFields.shift();
-      currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve]
+      currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve];
     }
     quotationToSave.products.push(currentProduct);
   }

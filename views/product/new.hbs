@@ -3,13 +3,12 @@
 </div>
 
 <div class="columns"> 
-       <form action="/quotations/new" method="post">
 
   <div class="column is-2 is-hidden-mobile"> 
   </div>
 
   <div class="column has-text-right is-hidden-mobile">       
-    <h3 class="title is-2 is-centered">Quotation N°</h3>
+    <h3 class="title is-2 is-centered">New product </h3>
   </div>
 
   <div class="column has-text-centered">
@@ -50,6 +49,7 @@
 
   <div class="column is-hidden-mobile"></div> 
 
+       <form action="/quotations/new" method="post">
      {{!-- infos customer  --}}
           <div class="columns is-paddingless is-marginless">
 
@@ -123,32 +123,20 @@
               <tr>
                 <th><abbr title="Position">Designation</abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quantity</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price (without tax)</p></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">VAT rate</p></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position "><p class="has-text-centered">Unit Price</p></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">TVA</p></abbr></th>
                 <th><abbr title="Position"><p class="has-text-right">Total Price</p></abbr></th>
                 <th  class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </thead>
             <tbody class="productsContainer">
-                <tr class="product">
-                  <td>
-                    <input class="input is-fullwidth is-small" type="text" name="designation">
-                  </td>
-                  <td class="is-hidden-mobile">
-                      <input type="text" name="quantity" class="initFields input is-fullwidth is-small">
-                  </td>
-                  <td class="is-hidden-mobile">
-                    <input type="text" name="unitPriceWT" class="initFields input is-fullwidth is-small" placeholder="€">
-                  </td>
-                  <td class="is-hidden-mobile">
-                    <input type="text" name="vatRate" class="initFields input is-fullwidth is-small" placeholder="%">
-                  </td>
-                  <td>
-                    <input class="input is-fullwidth is-small" type="text" placeholder="€" readonly >
-                  </td>
-                  <td class="is-hidden-mobile">
-                    <button type="button" class="button is-focused is-link is-centered is-small deleteBtn">Delete</button>
-                  </td>
+                <tr>
+                  <td><input class="input is-fullwidth is-small" type="text" name="designation"></td>
+                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small"type="text" name="quantity"></p></td>
+                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small"type="text" name="unitPrice" placeholder="€"></p></td>
+                  <td class="is-hidden-mobile"><p class="has-text-centered"><input class="input is-fullwidth is-small" type="text" name="vatRate" placeholder="%"></p></td>
+                  <td><p class="has-text-right"><input class="input is-fullwidth is-small" type="text" placeholder="€"></p></td>
+                  <td class="is-hidden-mobile"><button type="button" class="button is-focused is-link is-centered is-small">Delete</button></td>
                 </tr>
             </tbody>
             <tfoot>
@@ -156,8 +144,8 @@
                 <th></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
-                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Quotation Total</p></th>
-                <th><abbr title="Position"><p id="quotationTotal" class="has-text-right">0.00€</p></abbr></th>
+                <th class="is-hidden-mobile"><abbr title="Position"><p class="has-text-centered">Price Total</p></th>
+                <th><abbr title="Position"><p class="has-text-right">{{quotation.total}}€</p></abbr></th>
                 <th class="is-hidden-mobile"><abbr title="Position"></abbr></th>
               </tr>
             </tfoot>
@@ -173,14 +161,13 @@
        <div class="column is-1 is-hidden-mobile"></div>
     </div>
 
-    <div class="columns">
-          <div class="column is-1 is-hidden-mobile"></div>
-          <div class="column has-text-centered">
-            <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
-          </div>
-          <div class="column is-1 is-hidden-mobile"></div>
-    </div>
-  </form>
+<div class="columns">
+       <div class="column is-1 is-hidden-mobile"></div>
+       <div class="column has-text-centered">
+        <button id="submitBtn" type="submit" class="button is-focused is-link is-centered">Save</button>
+       </div>
+       <div class="column is-1 is-hidden-mobile"></div>
+ </div>
 
  </form>
 {{!-- colonnes   --}}
