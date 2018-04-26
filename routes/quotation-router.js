@@ -73,6 +73,30 @@ router.get("/view/:quotationNumber", (req, res, next) => {
   })
 });
 
+router.get("/delete/:quotationId", (req, res, next) => {
+  Quotation.findByIdAndRemove(req.params.quotationId)
+  .then(() => {
+    res.redirect("/quotations/1");
+  })
+  .catch(err => {
+    next(err);
+  })
+});
+
+router.get("/accepted/:quotationId", (req, res, next) => {
+  if(req.user) {
+    Quotation.findByIdAndUpdate(req.params.quotationId, {accepted: true})
+    .then(() => {
+      res.redirect("/quotations/1");
+    })
+    .catch(err => {
+      next(err);
+    })
+  } else {
+    res.redirect("/auth/login");
+  }
+});
+
 router.get("/:page?", (req, res, next) => {
   if(req.user) {
     let page = req.params.page || 1;
