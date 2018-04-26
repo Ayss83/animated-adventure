@@ -34,7 +34,7 @@
               </div>
         
               <div class="column ">
-                Delivry date
+                Delivery date
               </div>
 
               <div class="column ">
@@ -43,10 +43,10 @@
           </div>
 
 {{!-- for each   --}}
-      {{#each delivry-formsList}}
+      {{#each deliverysList}}
         <div class="columns has-text-centered is-gapless tr" height="20">
             <div class="column">
-              {{this.delivry-formNumber}}
+              {{this.delivery-formNumber}}
             </div>
           
             <div class="column">
@@ -84,7 +84,7 @@
     </div>
     <div class="column"> 
       <a class="button {{navColor}} is-centered" href="/delivery-forms/new">
-        <h2>New delivryform</h2>
+        <h2>New delivery form</h2>
       </a>  
     </div>
   </div>
@@ -112,4 +112,4 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-<script src="/javascripts/delivry-forms/delivry-formList.js"></script>
+<script src="/javascripts/delivery-forms/delivery-formList.js"></script>

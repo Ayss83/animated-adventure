@@ -50,6 +50,30 @@ router.get("/new", (req, res, next) => {
   }
 });
 
+router.get("/delete/:invoiceId", (req, res, next) => {
+  Invoice.findByIdAndRemove(req.params.invoiceId)
+  .then(() => {
+    res.redirect("/invoices/1");
+  })
+  .catch(err => {
+    next(err);
+  })
+});
+
+router.get("/paid/:invoiceId", (req, res, next) => {
+  if(req.user) {
+    Invoice.findByIdAndUpdate(req.params.invoiceId, {paid: true})
+    .then(() => {
+      res.redirect("/invoices/1");
+    })
+    .catch(err => {
+      next(err);
+    })
+  } else {
+    res.redirect("/auth/login");
+  }
+});
+
 router.get("/view/:invoiceNumber", (req, res, next) => {
   Invoice.find({invoiceNumber: req.params.invoiceNumber})
   .then(invoice => {

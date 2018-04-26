@@ -15,9 +15,8 @@ const deliverySchema = new Schema({
     zipCode: {type: String, required: true},
     city: {type: String, required: true},
     deliveryInfos: {type: String}
-  }
-}, {
-  timestamps: true
+  },
+  date: {type: Date, required: true}
 });
 
 const DeliveryForm = mongoose.model("DeliveryForm", deliverySchema);

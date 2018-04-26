@@ -70,7 +70,7 @@ router.get("/view/:quotationNumber", (req, res, next) => {
   })
   .catch(err => {
     next(err);
-  })
+  });
 });
 
 router.get("/delete/:quotationId", (req, res, next) => {
