@@ -19,7 +19,7 @@ addButtons.forEach(button => {
           "phone",
           "email",
           "adresse1",
-          "Adresse2",
+          "adresse2",
           "zipCode",
           "city",];
 
