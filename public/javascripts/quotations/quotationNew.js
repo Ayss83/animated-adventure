@@ -21,7 +21,7 @@ function removeProduct() {
 }
 
 //method to add a line to the products table
-document.querySelector("#addProductBtn").onclick = function() {
+document.querySelector(".addProductBtn").onclick = function() {
   const row = document.createElement("tr");
   row.className = "product";
 
