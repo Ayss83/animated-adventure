@@ -24,10 +24,6 @@
               <div class="column">
                 Customer       
               </div>
-          
-              <div class="column ">
-                Amount 
-              </div>
     
               <div class="column ">
                 Establishment date
@@ -46,15 +42,11 @@
       {{#each deliverysList}}
         <div class="columns has-text-centered is-gapless tr" height="20">
             <div class="column">
-              {{this.delivery-formNumber}}
+              {{this.deliveryNumber}}
             </div>
           
             <div class="column">
               {{this.customer.firstName}} {{this.customer.lastName}}     
-            </div>
-        
-            <div class="column is-hidden-mobile">
-              {{this.amount}}
             </div>
   
             <div class="column is-hidden-mobile">

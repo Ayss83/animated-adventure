@@ -67,7 +67,17 @@ router.get("/view/:deliveryNumber", (req, res, next) => {
   .catch(err => {
     next(err);
   });
-})
+});
+
+router.get("/delete/:deliveryId", (req, res, next) => {
+  DeliveryForm.findByIdAndRemove(req.params.deliveryId)
+  .then(() => {
+    res.redirect("/delivery-forms/1");
+  })
+  .catch(err => {
+    next(err);
+  })
+});
 
 router.get("/:page?", (req, res, next) => {
   if(req.user) {
@@ -117,6 +127,55 @@ router.get("/:page?", (req, res, next) => {
   } else {
     res.redirect("/auth/login");
   }
+});
+
+router.post("/new", (req, res, next) => {
+  const deliveryToSave = {
+    customer : {},
+    products : []
+  };
+
+  const inputNames = Object.keys(req.body);
+  const deliveryFields = inputNames.slice(0, 2);
+  const customerFields = inputNames.slice(2, 9);
+  const productFields = inputNames.slice(9);
+  const productsNumber = productFields.length / 2;
+
+  deliveryFields.forEach(field => {
+    deliveryToSave[field] = req.body[field];
+  });
+
+  customerFields.forEach(field => {
+    deliveryToSave.customer[field] = req.body[field];
+  });
+
+  for(let i = 0; i < productsNumber; i++) {
+    const currentProduct = {};
+    for(let j = 0; j < 2; j++) {
+      const currentProductFields = ["designation", "quantity"]
+      const fieldToRetrieve = productFields.shift();
+      currentProduct[currentProductFields[j]] = req.body[fieldToRetrieve];
+    }
+    console.log(deliveryToSave);
+    deliveryToSave.products.push(currentProduct);
+  }
+
+  const currentCustomer = deliveryToSave.customer;
+  Customer.find({lastName: currentCustomer.lastName, firstName: currentCustomer.firstName})
+  .then(customer => {
+    if(customer.length === 0) {
+      return Customer.create(currentCustomer)
+    }
+  })
+  .then(() => {
+    return DeliveryForm.create(deliveryToSave)
+  })
+  .then(() => {
+    res.redirect("/quotations/1");
+  })
+  .catch(err => {
+    next(err);
+  });
 });
 
 module.exports = router;
