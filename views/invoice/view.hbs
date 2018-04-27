@@ -87,12 +87,12 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-  {{!-- bouton    --}}
+      {{!-- bouton    --}}
 <div class="columns"> 
-  <div class="column is-2 is-hidden-mobile"> 
+  <div class="column is-1 is-hidden-mobile"> 
   </div>
   <div class="column"> 
-          <a  class="button is-danger is-centered is-outlined " href="/invoices/delete/{{invoice._id}}">
+          <a  class="button is-danger is-outlined " href="/quotations/delete/{{quotation._id}}">
             Delete
           </a>    
           </div>
@@ -102,15 +102,15 @@
           </a>    
           </div>
   <div class="column has-text-centered"> 
-          <a  class="button is-success is-centered " href="/invoices/paid/{{invoice._id}}">
-            Invoice paid 
+          <a  class="button is-success is-centered is-outlined" href="/quotations/accepted/{{quotation._id}}">
+            Quotation accepted 
           </a>    
           </div>
   <div class="column has-text-right"> 
-            <a  class="button {{navColor}} is-centered is-outlined " href="/invoices/view">
+            <a  class="button is-primary has-text-right is-outlined " href="/quotations/view">
               Edit pdf
             </a>     
   </div>
-  <div class="column is-2 is-hidden-mobile"> 
+  <div class="column is-1 is-hidden-mobile"> 
   </div>
 </div>
