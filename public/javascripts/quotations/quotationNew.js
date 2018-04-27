@@ -86,4 +86,5 @@ window.onload = function() {
   document.querySelectorAll(".initFields").forEach(field => {
     field.onkeyup = productTotal;
   });
+  productTotal();
 }
