@@ -20,6 +20,16 @@ router.get("/view", (req, res, next) => {
   res.render("product/view");
 })
 
+router.get("/delete/:productId", (req, res, next) => {
+  Product.findByIdAndRemove(req.params.productId)
+  .then(() => {
+    res.redirect("/products/1");
+  })
+  .catch(err => {
+    next(err);
+  })
+});
+
 router.get("/:page?", (req, res, next) => {
   if(req.user) {
     let page = req.params.page || 1;

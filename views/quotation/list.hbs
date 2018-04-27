@@ -40,24 +40,25 @@
 
 {{!-- for each   --}}
       {{#each quotationsList}}
-        <div class="columns has-text-centered is-gapless tr" height="20">
-            <div class="column">
+      
+        <div class="columns has-text-centered is-fullheight tr" height="20">
+            <div class="column is-striped is-hoverable">
               {{this.quotationNumber}}
             </div>
           
-            <div class="column">
+            <div class="column is-striped is-hoverable">
               {{this.customer.firstName}} {{this.customer.lastName}}     
             </div>
         
-            <div class="column is-hidden-mobile">
+            <div class="column is-hidden-mobile is-striped is-hoverable">
               {{this.amount}}
             </div>
   
-            <div class="column is-hidden-mobile">
+            <div class="column is-hidden-mobile is-striped is-hoverable">
               {{this.convertedDate}}
             </div>
        
-            <div class="column is-hidden-mobile">
+            <div class="column is-hidden-mobile is-striped is-hoverable">
               {{#if this.accepted}} Yes {{else}} No {{/if}}
             </div>
         </div>

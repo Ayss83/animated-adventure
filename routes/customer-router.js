@@ -18,6 +18,16 @@ router.get("/view", (req, res, next) => {
   res.render("customer/view");
 })
 
+router.get("/delete/:customerId", (req, res, next) => {
+  Customer.findByIdAndRemove(req.params.customerId)
+  .then(() => {
+    res.redirect("/customers/1");
+  })
+  .catch(err => {
+    next(err);
+  })
+});
+
 router.get("/:page?", (req, res, next) => {
   if(req.user) {
     let page = req.params.page || 1;

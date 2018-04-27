@@ -91,8 +91,8 @@
 <div class="columns"> 
   <div class="column is-1 is-hidden-mobile"> 
   </div>
-  <div class="column"> 
-          <a  class="button is-danger is-outlined " href="/quotations/delete/{{quotation._id}}">
+  <div class="column is-hidden-mobile"> 
+          <a  class="button is-danger is-outlined " href="/invoices/delete/{{invoice._id}}">
             Delete
           </a>    
           </div>
@@ -102,12 +102,12 @@
           </a>    
           </div>
   <div class="column has-text-centered"> 
-          <a  class="button is-success is-centered is-outlined" href="/quotations/accepted/{{quotation._id}}">
-            Quotation accepted 
+          <a  class="button is-success is-centered is-outlined" href="/invoices/accepted/{{invoice._id}}">
+            Invoice Paid 
           </a>    
           </div>
-  <div class="column has-text-right"> 
-            <a  class="button is-primary has-text-right is-outlined " href="/quotations/view">
+  <div class="column is-hidden-mobile has-text-right"> 
+            <a  class="button is-primary has-text-right is-outlined " href="/invoices/view">
               Edit pdf
             </a>     
   </div>

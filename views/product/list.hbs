@@ -37,17 +37,20 @@
               <div class="column">
                  Creation date
               </div>
+
+              <div class="column">
+              </div>
           </div>
 
 {{!-- for each   --}}
       {{#each productsList}}
-        <div class="columns has-text-centered is-gapless tr" height="20">
+        <div class="columns has-text-centered tr" height="20">
             
             <div class="column">
               {{this.product.productName}}
             </div>
           
-            <div class="column">
+            <div class="column is-hidden-mobile">
               {{this.product.designation}}    
             </div>
 
@@ -60,11 +63,11 @@
               {{this.product.vatRate}}
             </div>
 
-           <div class="column">
+           <div class="column is-hidden-mobile">
               {{this.date}}
             </div>
                       
-             <div class="column">
+             <div class="column is-hidden-mobile">
               <a type="button" class="button {{navColor}} is-centered is-outlined is-small" href="product/view" >Upddate</button>
             </div>
         </div>
