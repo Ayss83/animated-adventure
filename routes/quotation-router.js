@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const pdf = require("pdfjs");
+const fs = require("fs");
 
 const Quotation = require("../models/Quotation");
 const Customer = require("../models/Customer");
@@ -48,6 +50,16 @@ router.get("/new", (req, res, next) => {
   } else {
     res.redirect("/auth/login");
   }
+});
+
+router.get("/pdf", (req, res, next) => {
+  const doc = new pdf.Document({ font: new pdf.Font(require('pdfjs/font/Helvetica.json')), fontSize: 35 });
+
+  doc.cell().text().add("Document will be generated here");
+  doc.pipe(fs.createWriteStream('output.pdf'))
+  res.locals.doc = doc;
+  res.render("quotation/pdf");
+  doc.end()
 });
 
 router.get("/view/:quotationNumber", (req, res, next) => {
