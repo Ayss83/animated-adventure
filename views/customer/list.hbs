@@ -32,11 +32,11 @@
       
              
               <div class="column is-hidden-mobile">
-                Adresse      
+                Address      
               </div>
         
               <div class="column is-hidden-mobile">
-                Adresse's Details
+                Address Details
               </div>
 
              <div class="column is-hidden-mobile">
@@ -53,15 +53,9 @@
 
 {{!-- for each   --}}
       {{#each customersList}}
-<<<<<<< HEAD
-        <div class="columns has-text-centered tr" height="20">          
-            <div class="column ">
-              {{this.customer.firstName}} {{this.customer.lastName}}     
-=======
         <div class="columns has-text-centered is-gapless tr" height="20">          
-            <div class="column is-hidden-mobile">
+            <div class="column">
               {{this.firstName}} {{this.lastName}}     
->>>>>>> e86ab0211205c08e2342bb1fc62ba883e226f012
             </div>
 
             <div class="column">
@@ -88,13 +82,8 @@
              {{this.city}} 
             </div>
 
-<<<<<<< HEAD
             <div class="column is-hidden-mobile">
-              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="customer/view">Upddate</a>
-=======
-            <div class="column">
-              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="/customers/view">Upddate</a>
->>>>>>> e86ab0211205c08e2342bb1fc62ba883e226f012
+              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="customers/view">Upddate</a>
             </div>
         </div>
           {{/each}}  
