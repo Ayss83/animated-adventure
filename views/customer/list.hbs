@@ -19,11 +19,7 @@
           <div class="columns has-text-centered has-text-weight-bold is-hidden-mobile" height="30">
             
               <div class="column is-hidden-mobile">
-              First name        
-              </div>
-          
-              <div class="column ">
-                Last name  
+              Name     
               </div>
     
               <div class="column ">
@@ -50,6 +46,9 @@
               <div class="column is-hidden-mobile">
                 City
               </div>
+
+               <div class="column is-hidden-mobile"> 
+              </div>
           </div>
 
 {{!-- for each   --}}
@@ -57,10 +56,6 @@
         <div class="columns has-text-centered is-gapless tr" height="20">          
             <div class="column is-hidden-mobile">
               {{this.customer.firstName}} {{this.customer.lastName}}     
-            </div>
-        
-            <div class="column">
-              {{this.customer.lastName}} 
             </div>
 
             <div class="column">
