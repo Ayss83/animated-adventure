@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
+const Customer = require("../models/Customer");
+
 router.use((req, res, next) => {
   res.locals.navColor = "is-warning";
   next();
-});
-
-router.get("/", (req, res, next) => {
-  res.render("customer/list");
 });
 
 router.get("/new", (req, res, next) => {
@@ -16,7 +14,7 @@ router.get("/new", (req, res, next) => {
 
 router.get("/view", (req, res, next) => {
   res.render("customer/view");
-})
+});
 
 router.get("/:page?", (req, res, next) => {
   if(req.user) {

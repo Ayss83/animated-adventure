@@ -15,13 +15,13 @@ document.querySelector(".pagination-next").onclick = function() {
   }
 }
 
-function displayQuotation() {
-  quotationNum = event.target.parentNode.firstElementChild.innerHTML.trim();
-  window.location.assign(`/customers/view/${customerNum}`);
+function displayCustomer() {
+  // quotationNum = event.target.parentNode.firstElementChild.innerHTML.trim();
+  window.location.assign(`/customers/view`);
 }
 
 window.onload = function() {
   document.querySelectorAll(".tr").forEach(tr => {
-    tr.onclick = displayQuotation;
+    tr.onclick = displayCustomer;
   });
 }

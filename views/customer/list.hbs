@@ -55,35 +55,35 @@
       {{#each customersList}}
         <div class="columns has-text-centered is-gapless tr" height="20">          
             <div class="column is-hidden-mobile">
-              {{this.customer.firstName}} {{this.customer.lastName}}     
+              {{this.firstName}} {{this.lastName}}     
             </div>
 
             <div class="column">
-              {{this.customer.phone}} 
+              {{this.phone}} 
             </div>
        
             <div class="column is-hidden-mobile">
-              {{this.customer.email}}
+              {{this.email}}
             </div>
 
             <div class="column is-hidden-mobile">
-              {{this.customer.adress1}} 
+              {{this.address1}} 
             </div>
        
             <div class="column is-hidden-mobile">
-             {{this.customer.adress2}} 
+             {{this.address2}} 
             </div>
 
             <div class="column is-hidden-mobile">
-              {{this.customer.zipcode}} 
+              {{this.zipCode}} 
             </div>
        
             <div class="column is-hidden-mobile">
-             {{this.customer.city}} 
+             {{this.city}} 
             </div>
 
             <div class="column">
-              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="customer/view">Upddate</a>
+              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="/customers/view">Upddate</a>
             </div>
         </div>
           {{/each}}  
@@ -129,4 +129,4 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-<script src="/javascripts/quotations/quotationList.js"></script>
+<script src="/javascripts/customers/customerList.js"></script>
