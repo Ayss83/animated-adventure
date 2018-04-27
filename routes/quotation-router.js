@@ -56,10 +56,12 @@ router.get("/pdf", (req, res, next) => {
   const doc = new pdf.Document({ font: new pdf.Font(require('pdfjs/font/Helvetica.json')), fontSize: 35 });
 
   doc.cell().text().add("Document will be generated here");
-  doc.pipe(fs.createWriteStream('output.pdf'))
-  res.locals.doc = doc;
-  res.render("quotation/pdf");
+  doc.cell({paddingTop: 550}).text("but for now use a pen and paper");
+  doc.pipe(fs.createWriteStream('./public/output.pdf'))
   doc.end()
+  .then(() => {
+    res.render("quotation/pdf");
+  })
 });
 
 router.get("/view/:quotationNumber", (req, res, next) => {
