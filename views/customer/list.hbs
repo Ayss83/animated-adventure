@@ -53,37 +53,48 @@
 
 {{!-- for each   --}}
       {{#each customersList}}
+<<<<<<< HEAD
         <div class="columns has-text-centered tr" height="20">          
             <div class="column ">
               {{this.customer.firstName}} {{this.customer.lastName}}     
+=======
+        <div class="columns has-text-centered is-gapless tr" height="20">          
+            <div class="column is-hidden-mobile">
+              {{this.firstName}} {{this.lastName}}     
+>>>>>>> e86ab0211205c08e2342bb1fc62ba883e226f012
             </div>
 
             <div class="column">
-              {{this.customer.phone}} 
+              {{this.phone}} 
             </div>
        
             <div class="column is-hidden-mobile">
-              {{this.customer.email}}
+              {{this.email}}
             </div>
 
             <div class="column is-hidden-mobile">
-              {{this.customer.adress1}} 
+              {{this.address1}} 
             </div>
        
             <div class="column is-hidden-mobile">
-             {{this.customer.adress2}} 
+             {{this.address2}} 
             </div>
 
             <div class="column is-hidden-mobile">
-              {{this.customer.zipcode}} 
+              {{this.zipCode}} 
             </div>
        
             <div class="column is-hidden-mobile">
-             {{this.customer.city}} 
+             {{this.city}} 
             </div>
 
+<<<<<<< HEAD
             <div class="column is-hidden-mobile">
               <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="customer/view">Upddate</a>
+=======
+            <div class="column">
+              <a type="button" class="button {{navColor}} is-centered is-outlined is-small " href="/customers/view">Upddate</a>
+>>>>>>> e86ab0211205c08e2342bb1fc62ba883e226f012
             </div>
         </div>
           {{/each}}  
@@ -129,4 +140,4 @@
   <div class="column is-1 is-hidden-mobile"></div>
 </div>
 
-<script src="/javascripts/quotations/quotationList.js"></script>
+<script src="/javascripts/customers/customerList.js"></script>
